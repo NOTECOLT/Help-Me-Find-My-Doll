@@ -25,10 +25,14 @@ public class GameSessionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((timeManager.GetTimeElapsedPercentage() >= timePeriodsByPercentage[timeIndex]) && timeIndex < (timePeriodsByPercentage.Length - 1))
+        if (timeIndex < (timePeriodsByPercentage.Length))
         {
-            fov.SetFOVSettings(fovProfiles[timeIndex].GetFOV(), fovProfiles[timeIndex].GetViewDistance());
-            timeIndex++;
+            if ((timeManager.GetTimeElapsedPercentage() >= timePeriodsByPercentage[timeIndex]))
+            {
+                fov.SetFOVSettings(fovProfiles[timeIndex].GetFOV(), fovProfiles[timeIndex].GetViewDistance());
+                timeIndex++;
+            }
         }
+        
     }
 }

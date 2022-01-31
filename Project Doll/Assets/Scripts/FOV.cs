@@ -8,7 +8,7 @@ public class FOV : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
 
     [Header("FOV Settings")]
-    [SerializeField] float fov = 90f;
+    [SerializeField] float fov = 130f;
     [SerializeField] int rayCount = 2;
     [SerializeField] float viewDistance = 10f;
 
@@ -88,7 +88,8 @@ public class FOV : MonoBehaviour
 
     public void SetDirection(Vector3 aimDirection)
     {
-        viewAngleSetting = GetAngleFromVector(aimDirection) - fov/2f;
+        // viewAngleSetting = GetAngleFromVector(aimDirection) - 20; //- (fov/2f);
+        viewAngleSetting = GetAngleFromVector(aimDirection) - ((180f-fov)/2f);
     }
 
     public static Vector3 GetVectorFromAngle(float angle)
@@ -110,8 +111,8 @@ public class FOV : MonoBehaviour
 
     public void SetFOVSettings(float fov, float viewDistance)
     {
-        /*this.fov = fov;
+        this.fov = fov;
         this.viewDistance = viewDistance;
-        angleIncrease = this.fov / rayCount;*/
+        angleIncrease = this.fov / rayCount;
     }
 }

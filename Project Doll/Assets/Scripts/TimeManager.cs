@@ -36,7 +36,7 @@ public class TimeManager : MonoBehaviour
     {
         // variables on time
         timeElapsedPercentage = (1 - (timeRemaining / timeLimit)) * 100;
-        Debug.Log("Time percentage: " + timeElapsedPercentage);
+        //Debug.Log("Time percentage: " + timeElapsedPercentage);
         timeRemaining -= Time.deltaTime;
 
         if (timeRemaining <= 0 && allowGameEnd)
