@@ -26,7 +26,6 @@ public class Interactables : MonoBehaviour
 
     public void ShowText()
     {
-        // Starts ShowTextCoroutine to show text
         if (Input.GetKeyDown(KeyCode.E) && !textActive)
         {
             StartCoroutine(ShowTextCoroutine());
@@ -35,7 +34,6 @@ public class Interactables : MonoBehaviour
 
     private IEnumerator ShowTextCoroutine()
     {
-        // Creates text, destroys after textDuration
         GameObject text = Instantiate(
                 floatingTextPrefab,
                 new Vector2(transform.position.x, transform.position.y + textSpawnOffset),
