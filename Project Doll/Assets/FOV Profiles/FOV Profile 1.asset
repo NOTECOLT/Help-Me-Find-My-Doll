@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FOV Profile 1
   m_EditorClassIdentifier: 
   fov: 150
-  viewDistance: 10
+  viewDistance: 15

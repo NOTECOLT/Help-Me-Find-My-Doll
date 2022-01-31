@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: FOV Profile 2
   m_EditorClassIdentifier: 
   fov: 90
-  viewAngleSetting: 0
-  viewDistance: 10
+  viewDistance: 9
