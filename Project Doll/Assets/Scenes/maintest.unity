@@ -450,6 +450,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3761219530931517946, guid: cc9561697bdfde44c820f0bd411f4c7f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3761219530931517947, guid: cc9561697bdfde44c820f0bd411f4c7f, type: 3}
       propertyPath: layerMaskInteractables.m_Bits
       value: 2048
@@ -1332,6 +1336,22 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 4771825308549427326, guid: b8e7dac36c35e9c4d990547c162999bd, type: 3}
   textDuration: 2
   textSpawnOffset: 1
+--- !u!1 &1712831614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7370029451405751491, guid: a78efc3cda5945743b8602296fe1af08, type: 3}
+  m_PrefabInstance: {fileID: 1479574188}
+  m_PrefabAsset: {fileID: 0}
+--- !u!210 &1712831619
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712831614}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1001 &1842032919
 PrefabInstance:
   m_ObjectHideFlags: 0

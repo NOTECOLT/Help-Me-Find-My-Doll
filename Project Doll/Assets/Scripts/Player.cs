@@ -80,11 +80,7 @@ public class Player : MonoBehaviour
     private void SetPlayerFOV(float deltaX, float deltaY)
     {
         fov.SetOrigin(transform.position);
-        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
-        {
-            // yes
-        }
-        else
+        if (!(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0))
         {
             fov.SetDirection(new Vector3(-deltaY, deltaX));
         }
