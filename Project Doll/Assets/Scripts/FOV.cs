@@ -10,14 +10,13 @@ public class FOV : MonoBehaviour
     [Header("FOV Settings")]
     [SerializeField] float fov = 90f;
     [SerializeField] int rayCount = 2;
-    [SerializeField] float viewAngleSetting = 0f;
     [SerializeField] float viewDistance = 10f;
 
     // Variables
     Vector3 origin;
     float angleIncrease;
     float angle;
-
+    float viewAngleSetting;
     // Cached references
     Mesh mesh;
 
@@ -26,7 +25,8 @@ public class FOV : MonoBehaviour
     {  
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-        angleIncrease = fov / rayCount;
+        
+        viewAngleSetting = 0f;
     }
 
     // Update is called once per frame
@@ -41,6 +41,7 @@ public class FOV : MonoBehaviour
         Vector2[] uv = new Vector2[vertices.Length];
         int[] triangles = new int[rayCount * 3];
 
+        angleIncrease = fov / rayCount;
         vertices[0] = origin;
         angle = viewAngleSetting;
         int vertexIndex = 1;
@@ -105,5 +106,12 @@ public class FOV : MonoBehaviour
             angle += 360;
         }
         return Mathf.RoundToInt(angle);
+    }
+
+    public void SetFOVSettings(float fov, float viewDistance)
+    {
+        /*this.fov = fov;
+        this.viewDistance = viewDistance;
+        angleIncrease = this.fov / rayCount;*/
     }
 }
