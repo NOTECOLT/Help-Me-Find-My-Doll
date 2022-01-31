@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        SetPlayerFOV(deltaX, deltaY);
     }
 
     private void Move()
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour
         // Moves player
         deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * playerMovespeed;
         deltaY = Input.GetAxis("Vertical") * Time.deltaTime * playerMovespeed;
-        SetPlayerFOV(deltaX, deltaY);
+        
         GetComponent<Rigidbody2D>().position += new Vector2(deltaX, deltaY);
         //transform.position = new Vector2(transform.position.x + deltaX, transform.position.y + deltaY);
     }
