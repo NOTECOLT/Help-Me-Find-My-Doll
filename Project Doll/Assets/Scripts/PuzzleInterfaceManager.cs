@@ -21,6 +21,7 @@ public class PuzzleInterfaceManager : MonoBehaviour {
     // PRIVATE VARIABLES
     private List<GameObject> _interfaceList = new List<GameObject>();
     private GameObject _activatedInterface = null;
+    private float _timer = 0f;
 
     // PUBLIC VARIABLES
     public bool hasActiveInterface = false;
@@ -35,8 +36,9 @@ public class PuzzleInterfaceManager : MonoBehaviour {
     }
 
     void Update() {
-        if (hasActiveInterface) {
-            if (Input.GetKeyUp(KeyCode.Escape)) {
+        _timer += Time.deltaTime;
+        if (hasActiveInterface && _timer >= 0.25f) {
+            if (Input.GetKeyUp(KeyCode.Escape) || Input.GetKeyUp(KeyCode.E)) {
                 _activatedInterface.SetActive(false);
                 _activatedInterface = null;
                 hasActiveInterface = false;
@@ -54,5 +56,7 @@ public class PuzzleInterfaceManager : MonoBehaviour {
             } else
                 interfaceChild.SetActive(false);
         }
+
+        _timer = 0f;
     }
 }

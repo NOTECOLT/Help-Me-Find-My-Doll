@@ -9,7 +9,7 @@ public class Interactables : MonoBehaviour {
     [SerializeField] private string _interfaceName = "interface";
 
     public void ShowInterface() {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E) && !PuzzleInterfaceManager.Instance.hasActiveInterface)
             PuzzleInterfaceManager.Instance.ActivateInterface(_interfaceName);
     }
 }
