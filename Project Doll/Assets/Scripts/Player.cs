@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     {
         fov = FindObjectOfType<FOV>();
         directionFacing = new float[2];
+        fov.SetDirection(Vector3.right);
     }
 
     // Update is called once per frame
@@ -48,7 +49,9 @@ public class Player : MonoBehaviour
 
     private Vector2 GetPlayerDirection()
     {
-        
+        // Get player direction based on movement input
+        // Turns movement input into vector and uses that vector to get angle
+        // Returns direction vector to be used in raycast in FindInteractables()
         if (Input.GetAxis("Horizontal") >= 0.1 || Input.GetAxis("Horizontal") <= -0.1)
         {
             directionFacing[0] = Mathf.Sign(Input.GetAxis("Horizontal"))*1;
@@ -79,6 +82,7 @@ public class Player : MonoBehaviour
 
     private void SetPlayerFOV(float deltaX, float deltaY)
     {
+        // Moves FOV cone and direction based on player's movement
         fov.SetOrigin(transform.position);
         if (!(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0))
         {
