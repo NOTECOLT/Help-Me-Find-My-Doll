@@ -142,8 +142,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5446478018169463690}
   - component: {fileID: 5446478018169463691}
-  m_Layer: 16
-  m_Name: UnseenStuff
+  m_Layer: 13
+  m_Name: Darkness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
