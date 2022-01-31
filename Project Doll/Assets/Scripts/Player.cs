@@ -33,7 +33,8 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        Move();
+        if (!PuzzleInterfaceManager.Instance.hasActiveInterface)
+            Move();
     }
 
     private void Move()
@@ -65,14 +66,13 @@ public class Player : MonoBehaviour
         //Debug.Log(directionFacing[0]);
     }
 
-    private void FindInteractables()
-    {
+    private void FindInteractables() {
         // Uses raycast2D to check if there are interactables that can be interacted with
         Debug.DrawRay(transform.position, GetPlayerDirection(), Color.white, 0.01f);
         raycastHitInteractables = Physics2D.Raycast(transform.position, GetPlayerDirection(), interactDistance, layerMaskInteractables);
-        if (raycastHitInteractables)
-        {
-            raycastHitInteractables.collider.SendMessage("ShowText");
+        if (raycastHitInteractables) {
+            raycastHitInteractables.collider.SendMessage("ShowInterface");
+            
             Debug.Log(raycastHitInteractables.collider.name);
         }
     }
