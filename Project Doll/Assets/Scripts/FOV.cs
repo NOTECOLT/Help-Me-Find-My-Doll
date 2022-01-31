@@ -111,8 +111,9 @@ public class FOV : MonoBehaviour
 
     public void SetFOVSettings(float fov, float viewDistance)
     {
+        viewAngleSetting = viewAngleSetting - (this.fov - fov) / 2;
         this.fov = fov;
         this.viewDistance = viewDistance;
-        angleIncrease = this.fov / rayCount;
+        angleIncrease = this.fov / rayCount; 
     }
 }
