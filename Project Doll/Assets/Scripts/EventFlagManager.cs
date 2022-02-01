@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EventFlagManager : MonoBehaviour {
+    // Singleton class used for passing all Event Flags. Couples with the EventFlagListener class.
+
     // SINGLETON PATTERN
     private static EventFlagManager _instance;
     public static EventFlagManager Instance { get {return _instance; } }
@@ -16,13 +18,42 @@ public class EventFlagManager : MonoBehaviour {
         }
     }
 
+    // PRIVATE VARIABLES
+    private Dictionary<string, bool> _flagDict = new Dictionary<string, bool>();
+
+
+    // PUBLIC VARIABLES
+    public string[] flagList;   // Used for creating the list of flags.
     public event Action<string> onFlagTickTrue;
+
+    void Start() {
+        // Each flag in flagList gets added to the _flagDict Dictionary.
+        foreach (string entry in flagList) {
+            _flagDict.Add(entry, false);
+        }
+    }
+
     public void FlagTickTrue(string flagName) {
-        print("Flag Called: " + flagName);
-        if (onFlagTickTrue != null)           
-            onFlagTickTrue(flagName);
-        else
-            Debug.LogError("No Flag Listener with event name " + flagName);
-            
+        if (!_flagDict.ContainsKey(flagName)) {
+            Debug.LogWarning("Flag Name " + flagName + " does not exist within Flag List Dictionary!");
+            return;
+        }
+
+        if (onFlagTickTrue == null) {
+            return;
+        }
+
+
+        print("Flag Called: " + flagName);         
+        onFlagTickTrue(flagName);
+    }
+
+    public bool GetFlagValue(string flagName) {
+        if (!_flagDict.ContainsKey(flagName)) {
+            Debug.LogWarning("Flag Name " + flagName + " does not exist within Flag List Dictionary!");
+            return false;
+        }
+
+        return _flagDict[flagName];
     }
 }

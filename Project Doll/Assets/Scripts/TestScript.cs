@@ -6,6 +6,6 @@ using TMPro;
 public class TestScript : MonoBehaviour
 {
     public void TurnOn() {
-        gameObject.GetComponent<TMP_Text>().enabled = true;
+        gameObject.SetActive(false);
     }
 }

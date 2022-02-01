@@ -23,6 +23,9 @@ public class PuzzleInterfaceManager : MonoBehaviour {
     private GameObject _activatedInterface = null;
     private float _timer = 0f;
 
+    private Vector2 _activePos = new Vector2(0, 0);
+    private Vector2 _inactivePos = new Vector2(5000, 5000);
+
     // PUBLIC VARIABLES
     public bool hasActiveInterface = false;
 
@@ -30,7 +33,8 @@ public class PuzzleInterfaceManager : MonoBehaviour {
         foreach (Transform child in transform) {
             if (child.gameObject.tag == "PuzzleInterface") {
                 _interfaceList.Add(child.gameObject);
-                child.gameObject.SetActive(false);
+                child.gameObject.SetActive(true);
+                child.gameObject.GetComponent<RectTransform>().localPosition = _inactivePos;
             }
         }
     }
@@ -39,7 +43,7 @@ public class PuzzleInterfaceManager : MonoBehaviour {
         _timer += Time.deltaTime;
         if (hasActiveInterface && _timer >= 0.25f) {
             if (Input.GetKeyUp(KeyCode.Escape) || Input.GetKeyUp(KeyCode.E)) {
-                _activatedInterface.SetActive(false);
+                _activatedInterface.GetComponent<RectTransform>().localPosition = _inactivePos;
                 _activatedInterface = null;
                 hasActiveInterface = false;
             }
@@ -50,11 +54,11 @@ public class PuzzleInterfaceManager : MonoBehaviour {
     public void ActivateInterface(string interfaceName) {
         foreach (GameObject interfaceChild in _interfaceList) {
             if (interfaceChild.name == interfaceName) {
-                interfaceChild.SetActive(true);
+                interfaceChild.GetComponent<RectTransform>().localPosition = _activePos;
                 _activatedInterface = interfaceChild;
                 hasActiveInterface = true;
             } else
-                interfaceChild.SetActive(false);
+                interfaceChild.GetComponent<RectTransform>().localPosition = _inactivePos;
         }
 
         _timer = 0f;

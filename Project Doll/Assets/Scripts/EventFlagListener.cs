@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class EventFlagListener : MonoBehaviour {
+    // Dedicated Listener Class for EventFlags. Will call any specified function once a flag has been ticked.
+
     void Start() {
         EventFlagManager.Instance.onFlagTickTrue += OnFlagTick;
     }
@@ -14,5 +16,9 @@ public class EventFlagListener : MonoBehaviour {
     private void OnFlagTick(string flagName) {
         if (flagName == flagNameRef)
             FlagFunction.Invoke();
+    }
+
+    void OnDstroy() {
+        EventFlagManager.Instance.onFlagTickTrue -= OnFlagTick;
     }
 }

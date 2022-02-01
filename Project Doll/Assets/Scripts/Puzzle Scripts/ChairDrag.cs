@@ -8,7 +8,7 @@ public class ChairDrag : DraggableItem {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "PuzzleDragTrigger") {
             enableMovement = false;
-            EventFlagManager.Instance.FlagTickTrue("doorDone");
+            EventFlagManager.Instance.FlagTickTrue("chairDrag");
         }
     }
 }
