@@ -477,6 +477,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3761219530931517892, guid: cc9561697bdfde44c820f0bd411f4c7f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3761219530931517893, guid: cc9561697bdfde44c820f0bd411f4c7f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -521,13 +525,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3761219530931517895, guid: cc9561697bdfde44c820f0bd411f4c7f, type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3761219530931517895, guid: cc9561697bdfde44c820f0bd411f4c7f, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3761219530931517944, guid: cc9561697bdfde44c820f0bd411f4c7f, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3761219530931517944, guid: cc9561697bdfde44c820f0bd411f4c7f, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc9561697bdfde44c820f0bd411f4c7f, type: 3}
@@ -1755,6 +1767,10 @@ PrefabInstance:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 163713637}
+    - target: {fileID: 5876648157826912147, guid: 31985ac23b042f548ac8946d7c9a481c, type: 3}
+      propertyPath: allowGameEnd
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31985ac23b042f548ac8946d7c9a481c, type: 3}
 --- !u!1001 &6351174787494236145
