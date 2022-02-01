@@ -53,3 +53,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fcb1f292e8f8b0645bee14572a570c6c, type: 2}
   timeText: {fileID: 0}
   allowGameEnd: 1
+  timeManager: {fileID: 0}
+  sceneLoader: {fileID: 0}
+  fov: {fileID: 0}

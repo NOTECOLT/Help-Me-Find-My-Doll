@@ -10,11 +10,9 @@ public class GameSessionManager : MonoBehaviour
     [SerializeField] FOVProfiles[] fovProfiles;
     [SerializeField] Text timeText;
     [SerializeField] bool allowGameEnd = false;
-
-    // Cached references
-    TimeManager timeManager;
-    FOV fov;
-    SceneLoader sceneLoader;
+    [SerializeField] TimeManager timeManager;
+    [SerializeField] SceneLoader sceneLoader;
+    [SerializeField] FOV fov;
 
     // variables
     int timeIndex;
@@ -22,11 +20,6 @@ public class GameSessionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Cached reference setup
-        sceneLoader = FindObjectOfType<SceneLoader>();
-        timeManager = FindObjectOfType<TimeManager>();
-        fov = FindObjectOfType<FOV>();
-
         // Set up initial FOV profile
         fov.SetFOVSettings(fovProfiles[0].GetFOV(), fovProfiles[0].GetViewDistance());
         timeIndex = 1;
