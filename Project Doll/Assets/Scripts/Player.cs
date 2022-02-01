@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!PuzzleInterfaceManager.Instance.hasActiveInterface)
+        if (!PuzzleInterfaceManager.Instance.hasActiveInterface) // Prevent player from moving when there is an active puzzle
             Move();
     }
 
@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
         if (raycastHitInteractables) {
             raycastHitInteractables.collider.SendMessage("ShowInterface");
             
-            Debug.Log(raycastHitInteractables.collider.name);
+            // Debug.Log(raycastHitInteractables.collider.name);
         }
     }
 
