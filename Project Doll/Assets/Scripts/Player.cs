@@ -8,12 +8,15 @@ public class Player : MonoBehaviour
     [SerializeField] float playerMovespeed = 100f;
     [SerializeField] float interactDistance = 10f;
     [SerializeField] LayerMask layerMaskInteractables;
+
     // Cached references
     FOV fov;
+    BoxCollider2D boxCollider;
 
     // Variables
     float[] directionFacing;
     RaycastHit2D raycastHitInteractables;
+    RaycastHit2D hit;
     float deltaX;
     float deltaY;
 
@@ -23,6 +26,7 @@ public class Player : MonoBehaviour
         fov = FindObjectOfType<FOV>();
         directionFacing = new float[2];
         fov.SetDirection(Vector3.right);
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -43,8 +47,7 @@ public class Player : MonoBehaviour
         // Moves player
         deltaX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * playerMovespeed;
         deltaY = Input.GetAxisRaw("Vertical") * Time.deltaTime * playerMovespeed;
-        
-        //GetComponent<Rigidbody2D>().position += new Vector2(deltaX, deltaY);
+
         transform.position = new Vector2(transform.position.x + deltaX, transform.position.y + deltaY);
     }
 
@@ -53,16 +56,17 @@ public class Player : MonoBehaviour
         // Get player direction based on movement input
         // Turns movement input into vector and uses that vector to get angle
         // Returns direction vector to be used in raycast in FindInteractables()
-        if (Input.GetAxisRaw("Horizontal") != 0)
-        {
-            directionFacing[0] = Input.GetAxisRaw("Horizontal");
-            directionFacing[1] = 0;
-        }
         if (Input.GetAxisRaw("Vertical") != 0)
         {
             directionFacing[1] = Input.GetAxisRaw("Vertical");
             directionFacing[0] = 0;
         }
+        if (Input.GetAxisRaw("Horizontal") != 0)
+        {
+            directionFacing[0] = Input.GetAxisRaw("Horizontal");
+            directionFacing[1] = 0;
+        }
+        
         Vector2 directionVector = new Vector2(directionFacing[0], directionFacing[1]);
         Debug.Log(GetAngleFromVector(directionVector));
         return directionVector;
