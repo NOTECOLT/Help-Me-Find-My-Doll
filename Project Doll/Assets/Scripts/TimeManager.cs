@@ -19,8 +19,10 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Cached reference setup
+        gameSessionManager = FindObjectOfType<GameSessionManager>();
+
         timeRemaining = timeLimit;
-        gameSessionManager = FindObjectOfType<GameSessionManager>();      
     }
 
     // Update is called once per frame

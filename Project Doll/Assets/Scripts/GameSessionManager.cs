@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameSessionManager : MonoBehaviour
 {
+    // Configuration parameters
     [SerializeField] float[] timePeriodsByPercentage;
     [SerializeField] FOVProfiles[] fovProfiles;
     [SerializeField] Text timeText;
