@@ -120,6 +120,10 @@ MonoBehaviour:
   lockXAxis: 0
   lockYAxis: 1
   enableMovement: 1
+  xMin: 50
+  xMax: 750
+  yMin: -315.3579
+  yMax: -315.3579
   victoryText: {fileID: 0}
 --- !u!50 &853160505064197872
 Rigidbody2D:
@@ -129,7 +133,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853160505064197878}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
