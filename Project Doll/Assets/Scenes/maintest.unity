@@ -1301,10 +1301,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7370029451405751490, guid: a78efc3cda5945743b8602296fe1af08, type: 3}
-      propertyPath: rayCount
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 7370029451405751491, guid: a78efc3cda5945743b8602296fe1af08, type: 3}
       propertyPath: m_Name
       value: FOV
@@ -1759,42 +1755,6 @@ PrefabInstance:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 163713637}
-    - target: {fileID: 5876648157826912147, guid: 31985ac23b042f548ac8946d7c9a481c, type: 3}
-      propertyPath: allowGameEnd
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876648157826912147, guid: 31985ac23b042f548ac8946d7c9a481c, type: 3}
-      propertyPath: fovProfiles.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876648157826912147, guid: 31985ac23b042f548ac8946d7c9a481c, type: 3}
-      propertyPath: fovProfiles.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: fba8da8fc1425ac4fbddb282866e2872, type: 2}
-    - target: {fileID: 5876648157826912147, guid: 31985ac23b042f548ac8946d7c9a481c, type: 3}
-      propertyPath: fovProfiles.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 12ea2efad857e334cba3a3d9cf4799d3, type: 2}
-    - target: {fileID: 5876648157826912147, guid: 31985ac23b042f548ac8946d7c9a481c, type: 3}
-      propertyPath: fovProfiles.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: fcb1f292e8f8b0645bee14572a570c6c, type: 2}
-    - target: {fileID: 5876648157826912147, guid: 31985ac23b042f548ac8946d7c9a481c, type: 3}
-      propertyPath: timePeriodsByPercentage.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876648157826912147, guid: 31985ac23b042f548ac8946d7c9a481c, type: 3}
-      propertyPath: timePeriodsByPercentage.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876648157826912147, guid: 31985ac23b042f548ac8946d7c9a481c, type: 3}
-      propertyPath: timePeriodsByPercentage.Array.data[1]
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5876648157826912147, guid: 31985ac23b042f548ac8946d7c9a481c, type: 3}
-      propertyPath: timePeriodsByPercentage.Array.data[2]
-      value: 80
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31985ac23b042f548ac8946d7c9a481c, type: 3}
 --- !u!1001 &6351174787494236145

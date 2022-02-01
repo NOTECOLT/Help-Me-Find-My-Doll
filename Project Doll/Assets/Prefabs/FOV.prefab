@@ -50,7 +50,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   fov: 130
-  rayCount: 50
+  rayCount: 100
   viewDistance: 15
 --- !u!33 &7370029451405751495
 MeshFilter:
