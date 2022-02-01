@@ -32,7 +32,7 @@ public class TimeManager : MonoBehaviour
 
     private void CalculateTimeRemaining()
     {
-        // variables on time
+        // Calculates time percentage until time limit
         timeElapsedPercentage = (1 - (timeRemaining / timeLimit)) * 100;
         //Debug.Log("Time percentage: " + timeElapsedPercentage);
         timeRemaining -= Time.deltaTime;

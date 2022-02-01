@@ -97,6 +97,7 @@ public class Player : MonoBehaviour
 
     public static float GetAngleFromVector(Vector2 vector)
     {
+        // Calculates for angle in degrees from input vector
         float angle = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
         return Mathf.RoundToInt(angle);
     }

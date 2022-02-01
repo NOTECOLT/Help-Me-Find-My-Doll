@@ -46,6 +46,8 @@ public class FOV : MonoBehaviour
         angle = viewAngleSetting;
         int vertexIndex = 1;
         int triangleIndex = 0;
+
+        // creates mesh triangles for FOV mask
         for (int i = 0; i <= rayCount; i++)
         {
             Vector3 vertex;
@@ -74,7 +76,7 @@ public class FOV : MonoBehaviour
             angle -= angleIncrease;
         }
 
-
+        // sets up mesh
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
