@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4771825306465723394}
   - component: {fileID: 4771825306465723393}
   - component: {fileID: 5229292172005426188}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: FloatingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ TextMesh:
   m_FontSize: 49
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 0}
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
     rgba: 4283322111
@@ -125,7 +125,7 @@ SortingGroup:
   m_GameObject: {fileID: 4771825306465723392}
   m_Enabled: 1
   m_SortingLayerID: -981293293
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!1 &4771825308549427326
 GameObject:
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4771825308549427327}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: FloatingTextParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}

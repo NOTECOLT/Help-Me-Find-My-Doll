@@ -15,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - Mask
-  - BehindMask
+  - FOVMask
+  - HiddenOutsideFOVMask
   - BlockFOV
   - Interactables
   - 

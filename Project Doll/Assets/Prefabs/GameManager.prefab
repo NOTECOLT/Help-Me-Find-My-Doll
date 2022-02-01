@@ -43,3 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde0459912802e645a41e46133d73aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timePeriodsByPercentage:
+  - 0
+  - 40
+  - 80
+  fovProfiles:
+  - {fileID: 11400000, guid: fba8da8fc1425ac4fbddb282866e2872, type: 2}
+  - {fileID: 11400000, guid: 12ea2efad857e334cba3a3d9cf4799d3, type: 2}
+  - {fileID: 11400000, guid: fcb1f292e8f8b0645bee14572a570c6c, type: 2}
+  timeText: {fileID: 0}
+  allowGameEnd: 1
