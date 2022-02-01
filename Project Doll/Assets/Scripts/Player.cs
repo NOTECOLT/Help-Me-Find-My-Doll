@@ -41,11 +41,11 @@ public class Player : MonoBehaviour
     private void Move()
     {
         // Moves player
-        deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * playerMovespeed;
-        deltaY = Input.GetAxis("Vertical") * Time.deltaTime * playerMovespeed;
+        deltaX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * playerMovespeed;
+        deltaY = Input.GetAxisRaw("Vertical") * Time.deltaTime * playerMovespeed;
         
-        GetComponent<Rigidbody2D>().position += new Vector2(deltaX, deltaY);
-        //transform.position = new Vector2(transform.position.x + deltaX, transform.position.y + deltaY);
+        //GetComponent<Rigidbody2D>().position += new Vector2(deltaX, deltaY);
+        transform.position = new Vector2(transform.position.x + deltaX, transform.position.y + deltaY);
     }
 
     private Vector2 GetPlayerDirection()
@@ -53,14 +53,14 @@ public class Player : MonoBehaviour
         // Get player direction based on movement input
         // Turns movement input into vector and uses that vector to get angle
         // Returns direction vector to be used in raycast in FindInteractables()
-        if (Input.GetAxis("Horizontal") >= 0.1 || Input.GetAxis("Horizontal") <= -0.1)
+        if (Input.GetAxisRaw("Horizontal") != 0)
         {
-            directionFacing[0] = Mathf.Sign(Input.GetAxis("Horizontal"))*1;
+            directionFacing[0] = Input.GetAxisRaw("Horizontal");
             directionFacing[1] = 0;
         }
-        if (Input.GetAxis("Vertical") >= 0.1 || Input.GetAxis("Vertical") <= -0.1)
+        if (Input.GetAxisRaw("Vertical") != 0)
         {
-            directionFacing[1] = Mathf.Sign(Input.GetAxis("Vertical"))*1;
+            directionFacing[1] = Input.GetAxisRaw("Vertical");
             directionFacing[0] = 0;
         }
         Vector2 directionVector = new Vector2(directionFacing[0], directionFacing[1]);
@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
         fov.SetOrigin(transform.position);
         if (!(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0))
         {
-            fov.SetDirection(new Vector3(-deltaY, deltaX));
+            fov.SetDirection(new Vector3(-directionFacing[1], directionFacing[0]));
         }
     }
 
