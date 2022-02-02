@@ -25,6 +25,7 @@ public class PuzzleInterfaceManager : MonoBehaviour {
 
     private Vector2 _activePos = new Vector2(0, 0);
     private Vector2 _inactivePos = new Vector2(5000, 5000);
+    
 
     // PUBLIC VARIABLES
     public bool hasActiveInterface = false;
@@ -45,10 +46,16 @@ public class PuzzleInterfaceManager : MonoBehaviour {
             if (Input.GetKeyUp(KeyCode.Escape) || Input.GetKeyUp(KeyCode.E)) {
                 _activatedInterface.GetComponent<RectTransform>().localPosition = _inactivePos;
                 _activatedInterface = null;
-                hasActiveInterface = false;
+                StartCoroutine("DeactivateInterface");
             }
         }
     }
+
+    private IEnumerator DeactivateInterface() {
+        yield return new WaitForSeconds(.1f);
+        hasActiveInterface = false;
+    }
+
 
     // Activates a single interface while leaves the rest deactivated
     public void ActivateInterface(string interfaceName) {
@@ -63,14 +70,12 @@ public class PuzzleInterfaceManager : MonoBehaviour {
                 i++;
             }
         }
-        // In case there is no interface of a name
-        if (i == transform.childCount)
-            Debug.LogError("No Interface of name " + interfaceName);
 
         _timer = 0f;
-
-
-        
+        // In case there is no interface of a name
+        if (i == transform.childCount) {
+            Debug.LogError("No Interface of name " + interfaceName);
+        }
     }
 
     public GameObject GetActivatedInterface() {
