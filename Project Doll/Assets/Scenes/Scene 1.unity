@@ -279,8 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f4fc2e88fa2454886ca728bccb04db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
-  functionNames: []
+  _key: 
+  _functions: []
 --- !u!1 &175295447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,9 +1263,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f4fc2e88fa2454886ca728bccb04db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 65000000
-  functionNames:
-  - ShowInterface
+  _key: 65000000
+  _functions:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1139012017}
+        m_TargetAssemblyTypeName: PuzzleObject, Assembly-CSharp
+        m_MethodName: ShowInterface
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1139012017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1900,8 +1913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f4fc2e88fa2454886ca728bccb04db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
-  functionNames: []
+  _key: 
+  _functions: []
 --- !u!1 &1712831614 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7370029451405751491, guid: a78efc3cda5945743b8602296fe1af08, type: 3}
@@ -2101,8 +2114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f4fc2e88fa2454886ca728bccb04db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
-  functionNames: []
+  _key: 
+  _functions: []
 --- !u!1 &1945742184
 GameObject:
   m_ObjectHideFlags: 0
