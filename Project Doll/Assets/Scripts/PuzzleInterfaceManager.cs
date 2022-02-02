@@ -52,15 +52,30 @@ public class PuzzleInterfaceManager : MonoBehaviour {
 
     // Activates a single interface while leaves the rest deactivated
     public void ActivateInterface(string interfaceName) {
+        int i = 0;
         foreach (GameObject interfaceChild in _interfaceList) {
             if (interfaceChild.name == interfaceName) {
                 interfaceChild.GetComponent<RectTransform>().localPosition = _activePos;
                 _activatedInterface = interfaceChild;
                 hasActiveInterface = true;
-            } else
+            } else {
                 interfaceChild.GetComponent<RectTransform>().localPosition = _inactivePos;
+                i++;
+            }
         }
+        // In case there is no interface of a name
+        if (i == transform.childCount)
+            Debug.LogError("No Interface of name " + interfaceName);
 
         _timer = 0f;
+
+
+        
+    }
+
+    public GameObject GetActivatedInterface() {
+        if (!hasActiveInterface) return null;
+
+        return _activatedInterface;
     }
 }
