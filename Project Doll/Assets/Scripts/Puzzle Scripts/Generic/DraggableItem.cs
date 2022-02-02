@@ -7,8 +7,8 @@ public class DraggableItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     // Generic MonoBehaviour Class for draggable items.
     
     // PRIVATE VARIABLES
-    [SerializeField] private Canvas _canvas;
-    private RectTransform _rectTransform;
+    private Canvas _canvas;
+    protected RectTransform _rectTransform;
 
     // PUBLIC VARAIABLES
     public bool lockXAxis, lockYAxis = false; // Locking either axis will make it so you can only drag the object along the other
@@ -17,10 +17,14 @@ public class DraggableItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     public float xMin, xMax = 0.0f;
     public float yMin, yMax = 0.0f;
 
-    void Awake() {
+    protected virtual void Awake() {
         _rectTransform = GetComponent<RectTransform>();
     }
-    public void OnBeginDrag(PointerEventData eventData) {
+
+    void Start() {
+        _canvas = GetComponentInParent<Canvas>();
+    }
+    public virtual void OnBeginDrag(PointerEventData eventData) {
         
     }
 
@@ -37,11 +41,19 @@ public class DraggableItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
 
     }
 
-    public void OnEndDrag(PointerEventData eventData) {
+    public virtual void OnEndDrag(PointerEventData eventData) {
 
     }
 
     public void OnPointerDown(PointerEventData eventData){
         
+    }
+
+    public void EnableMovement() {
+        enableMovement = true;
+    }
+
+    public void DisableMovement() {
+        enableMovement = false;
     }
 }

@@ -113,18 +113,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 853160505064197878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 940d2c71b92058643a9ce4568b06ecdc, type: 3}
+  m_Script: {fileID: 11500000, guid: c3dff234b224c89488a349d78ea5effe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvas: {fileID: 0}
   lockXAxis: 0
   lockYAxis: 1
   enableMovement: 1
-  xMin: 50
+  xMin: -504.04
   xMax: 750
   yMin: -405.5569
   yMax: -405.5569
-  victoryText: {fileID: 0}
+  _flagName: tutorial/chairDrag
 --- !u!50 &853160505064197872
 Rigidbody2D:
   serializedVersion: 4
