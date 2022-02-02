@@ -1,21 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class Interactables : MonoBehaviour {
-    [SerializeField] KeyCode[] key;
-    [SerializeField] string[] functionNames; 
+
     // Script for Interactable objects
 
     // private VARIABLES
-    // [SerializeField] private string _interfaceName = "interface";
+    [SerializeField] private KeyCode[] _key = new KeyCode[] {KeyCode.E};
+    [SerializeField] private UnityEvent[] _functions; 
 
     public void OnAction() {
-        for (int i = 0; i < key.Length; i++)
-        {
-            if (Input.GetKeyUp(key[i]))
-            {
-                gameObject.SendMessage(functionNames[i]);
+        for (int i = 0; i < _key.Length; i++) {
+            if (Input.GetKeyUp(_key[i])) {
+                _functions[i].Invoke();
             }
         }
     }
