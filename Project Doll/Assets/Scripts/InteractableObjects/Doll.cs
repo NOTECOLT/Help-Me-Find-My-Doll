@@ -9,6 +9,6 @@ public class Doll : MonoBehaviour
     {
         EventFlagManager.Instance.FlagTickTrue("dollCollected");
         Debug.Log(EventFlagManager.Instance.GetFlagValue("dollCollected"));
-        //Destroy(gameObject);
+         Destroy(gameObject);
     }
 }

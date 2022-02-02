@@ -12,7 +12,7 @@ public class Interactables : MonoBehaviour {
 
     public void OnAction() {
         for (int i = 0; i < _key.Length; i++) {
-            if (Input.GetKeyUp(_key[i])) {
+            if (Input.GetKeyDown(_key[i])) {
                 _functions[i].Invoke();
             }
         }

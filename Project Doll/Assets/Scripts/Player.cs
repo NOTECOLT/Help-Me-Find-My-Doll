@@ -69,11 +69,14 @@ public class Player : MonoBehaviour
         }
         
         Vector2 directionVector = new Vector2(directionFacing[0], directionFacing[1]);
-        Debug.Log(GetAngleFromVector(directionVector));
+        //Debug.Log(GetAngleFromVector(directionVector));
         return directionVector;
         //Debug.Log(directionFacing[0]);
     }
-
+    public float GetPlayerMovespeed()
+    {
+        return playerMovespeed;
+    }
     private void FindInteractables() {
         // Uses raycast2D to check if there are interactables that can be interacted with
         Debug.DrawRay(transform.position, GetPlayerDirection(), Color.white, 0.01f);
