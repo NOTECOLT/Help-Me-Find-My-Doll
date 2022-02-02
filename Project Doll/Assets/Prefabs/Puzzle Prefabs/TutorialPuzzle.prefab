@@ -32,12 +32,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 853160506603632325}
+  m_Father: {fileID: 853160505066811037}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 620.3239, y: -315.3579}
+  m_AnchoredPosition: {x: 594.29785, y: -405.55695}
   m_SizeDelta: {x: 472.316, y: 268.886}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &853160505064197877
@@ -122,8 +122,8 @@ MonoBehaviour:
   enableMovement: 1
   xMin: 50
   xMax: 750
-  yMin: -315.3579
-  yMax: -315.3579
+  yMin: -405.5569
+  yMax: -405.5569
   victoryText: {fileID: 0}
 --- !u!50 &853160505064197872
 Rigidbody2D:
@@ -175,6 +175,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 853160506603632325}
+  - {fileID: 853160505064197879}
+  - {fileID: 853160506443112860}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -215,16 +217,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853160506443112863}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 853160506603632325}
+  m_Father: {fileID: 853160505066811037}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -124, y: -305}
+  m_AnchoredPosition: {x: -150.02597, y: -395.199}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &853160506443112861
@@ -283,8 +285,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 853160506842506485}
-  - {fileID: 853160505064197879}
-  - {fileID: 853160506443112860}
   m_Father: {fileID: 853160505066811037}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 2376537031052201830}
   - component: {fileID: 3276503047906094106}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Doll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -447,4 +447,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  flagNameRef: chairDrag
+  flagNameRef: tutorial/chairDrag
