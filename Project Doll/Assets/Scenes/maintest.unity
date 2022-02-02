@@ -639,6 +639,7 @@ MonoBehaviour:
   - puzzle1/book2Drag
   - puzzle1/book3Drag
   - puzzle1/chairDrag
+  - puzzle1/rulerGet
   - puzzle1/keyAGet
 --- !u!4 &391586184
 Transform:
@@ -1020,7 +1021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &744129689
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1223,6 +1224,9 @@ GameObject:
   - component: {fileID: 1003831487}
   - component: {fileID: 1003831489}
   - component: {fileID: 1003831488}
+  - component: {fileID: 1003831490}
+  - component: {fileID: 1003831491}
+  - component: {fileID: 1003831492}
   m_Layer: 5
   m_Name: Key
   m_TagString: Untagged
@@ -1287,6 +1291,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003831486}
   m_CullTransparentMesh: 1
+--- !u!114 &1003831490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003831486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0f47e5fd04c894ca39e14fceb6d5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlagFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1003831491}
+        m_TargetAssemblyTypeName: ClickableItem, Assembly-CSharp
+        m_MethodName: SetClicking
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  flagNameRef: puzzle1/rulerGet
+--- !u!114 &1003831491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003831486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88049cda5534b6e4d917d91a084e4025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableClicking: 0
+  OnPointerDownFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerUpFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1003831492}
+        m_TargetAssemblyTypeName: EventFlagCaller, Assembly-CSharp
+        m_MethodName: CallEventFlag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1003831492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003831486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15c8a99cbd80f6438d1d2b64f25bf4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagName: puzzle1/keyAGet
 --- !u!1 &1139012012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,7 +2859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7154433632330729678, guid: a7834ea0d3cc2fd468c87ebc146c0206, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7154433632330729679, guid: a7834ea0d3cc2fd468c87ebc146c0206, type: 3}
       propertyPath: m_Pivot.x
