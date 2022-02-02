@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
         Debug.DrawRay(transform.position, GetPlayerDirection(), Color.white, 0.01f);
         raycastHitInteractables = Physics2D.Raycast(transform.position, GetPlayerDirection(), interactDistance, layerMaskInteractables);
         if (raycastHitInteractables) {
-            raycastHitInteractables.collider.SendMessage("ShowInterface");
+            raycastHitInteractables.collider.SendMessage("OnAction");
             
             // Debug.Log(raycastHitInteractables.collider.name);
         }
