@@ -279,7 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f4fc2e88fa2454886ca728bccb04db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interfaceName: Interface4
+  _key: 65000000
+  _functions: []
 --- !u!1 &175295447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,6 +1414,7 @@ GameObject:
   - component: {fileID: 1139012015}
   - component: {fileID: 1139012014}
   - component: {fileID: 1139012016}
+  - component: {fileID: 1139012017}
   m_Layer: 11
   m_Name: Tutorial Bookshelf
   m_TagString: Untagged
@@ -1521,6 +1523,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3f4fc2e88fa2454886ca728bccb04db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: 65000000
+  _functions:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1139012017}
+        m_TargetAssemblyTypeName: PuzzleObject, Assembly-CSharp
+        m_MethodName: ShowInterface
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1139012017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139012012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec2dbd43699bd742a26e298f5599c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: TutorialPuzzle
@@ -2261,6 +2291,7 @@ GameObject:
   - component: {fileID: 1609014355}
   - component: {fileID: 1609014354}
   - component: {fileID: 1609014356}
+  - component: {fileID: 1609014357}
   m_Layer: 11
   m_Name: Bookshelf
   m_TagString: Untagged
@@ -2369,6 +2400,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3f4fc2e88fa2454886ca728bccb04db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: 65000000
+  _functions:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1609014357}
+        m_TargetAssemblyTypeName: PuzzleObject, Assembly-CSharp
+        m_MethodName: ShowInterface
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1609014357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609014352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec2dbd43699bd742a26e298f5599c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: Bookshelf
@@ -2697,6 +2756,7 @@ GameObject:
   - component: {fileID: 1927960041}
   - component: {fileID: 1927960040}
   - component: {fileID: 1927960042}
+  - component: {fileID: 1927960043}
   m_Layer: 11
   m_Name: Bed
   m_TagString: Untagged
@@ -2805,6 +2865,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3f4fc2e88fa2454886ca728bccb04db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: 65000000
+  _functions:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1927960043}
+        m_TargetAssemblyTypeName: PuzzleObject, Assembly-CSharp
+        m_MethodName: ShowInterface
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1927960043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927960038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec2dbd43699bd742a26e298f5599c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: UnderBed
