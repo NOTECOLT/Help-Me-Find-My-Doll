@@ -63,9 +63,11 @@ GameObject:
   - component: {fileID: 7154433632335472807}
   - component: {fileID: 7154433632335472806}
   - component: {fileID: 7154433632335472800}
-  - component: {fileID: 7154433632335472801}
+  - component: {fileID: 6347415031755168104}
   - component: {fileID: 7154433632335472802}
   - component: {fileID: 7154433632335472803}
+  - component: {fileID: 2197427228727560002}
+  - component: {fileID: 3526885013300656429}
   m_Layer: 5
   m_Name: Chair
   m_TagString: Untagged
@@ -156,7 +158,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 470.9613, y: 268.40347}
   m_EdgeRadius: 0
---- !u!114 &7154433632335472801
+--- !u!114 &6347415031755168104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +167,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7154433632335472804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3dff234b224c89488a349d78ea5effe, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f86d278d43eccc46a6bb4f6a73a3178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lockXAxis: 0
@@ -175,7 +177,12 @@ MonoBehaviour:
   xMax: 750
   yMin: -405.5569
   yMax: -405.5569
-  _flagName: puzzle1/chairDrag
+  onBeginDragFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  onEndDragFunction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &7154433632335472802
 Rigidbody2D:
   serializedVersion: 4
@@ -212,9 +219,62 @@ MonoBehaviour:
   FlagFunction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7154433632335472801}
+      - m_Target: {fileID: 6347415031755168104}
         m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
-        m_MethodName: EnableMovement
+        m_MethodName: SetMovement
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  flagNameRef: puzzle1/book3Drag
+--- !u!114 &2197427228727560002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154433632335472804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15c8a99cbd80f6438d1d2b64f25bf4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagName: puzzle1/chairDrag
+--- !u!114 &3526885013300656429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154433632335472804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9ef6b0b5e046946b37d99bf2a735ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTriggerFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6347415031755168104}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetMovement
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2197427228727560002}
+        m_TargetAssemblyTypeName: EventFlagCaller, Assembly-CSharp
+        m_MethodName: CallEventFlag
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -224,7 +284,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  flagNameRef: puzzle1/book3Drag
+  colliderTag: PuzzleDragTrigger
 --- !u!1 &7154433633169115085
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,8 +358,9 @@ GameObject:
   - component: {fileID: 7154433633576895143}
   - component: {fileID: 7154433633576895137}
   - component: {fileID: 7154433633576895136}
-  - component: {fileID: 5216725657259977012}
   - component: {fileID: 5036948148696992328}
+  - component: {fileID: 6809993705573010450}
+  - component: {fileID: 6022397064665095526}
   m_Layer: 5
   m_Name: Key
   m_TagString: Untagged
@@ -364,18 +425,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5216725657259977012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7154433633576895142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12bf7a798185ea846bad1ea93033b030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5036948148696992328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,9 +440,41 @@ MonoBehaviour:
   FlagFunction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5216725657259977012}
-        m_TargetAssemblyTypeName: TestScript, Assembly-CSharp
-        m_MethodName: TurnOn
+      - m_Target: {fileID: 6809993705573010450}
+        m_TargetAssemblyTypeName: ClickableItem, Assembly-CSharp
+        m_MethodName: SetClicking
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  flagNameRef: puzzle1/chairDrag
+--- !u!114 &6809993705573010450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154433633576895142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88049cda5534b6e4d917d91a084e4025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableClicking: 0
+  OnPointerDownFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerUpFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6022397064665095526}
+        m_TargetAssemblyTypeName: EventFlagCaller, Assembly-CSharp
+        m_MethodName: CallEventFlag
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -403,7 +484,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  flagNameRef: chairDrag
+--- !u!114 &6022397064665095526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154433633576895142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15c8a99cbd80f6438d1d2b64f25bf4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagName: puzzle1/keyAGet
 --- !u!1 &7154433633875939478
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +586,8 @@ GameObject:
   - component: {fileID: 7538655850773432920}
   - component: {fileID: 7538655850773432922}
   - component: {fileID: 7538655850773432923}
-  - component: {fileID: 7538655850773432918}
+  - component: {fileID: 1029174426257156535}
+  - component: {fileID: 3245511474965448708}
   m_Layer: 5
   m_Name: Book1
   m_TagString: Untagged
@@ -591,7 +685,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &7538655850773432918
+--- !u!114 &1029174426257156535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -600,7 +694,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7538655850773432924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21130936ee93d14439e5bf5fc3e32c76, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f86d278d43eccc46a6bb4f6a73a3178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lockXAxis: 0
@@ -610,6 +704,76 @@ MonoBehaviour:
   xMax: 789.33
   yMin: -502.87
   yMax: 502.87
+  onBeginDragFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1029174426257156535}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetRaycastBlocking
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEndDragFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1029174426257156535}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetRaycastBlocking
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &3245511474965448708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538655850773432924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0f47e5fd04c894ca39e14fceb6d5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlagFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1029174426257156535}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetMovement
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1029174426257156535}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetRaycastBlocking
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  flagNameRef: puzzle1/book1Drag
 --- !u!1 &7538655850830643268
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,8 +787,9 @@ GameObject:
   - component: {fileID: 7538655850830643264}
   - component: {fileID: 7538655850830643266}
   - component: {fileID: 7538655850830643267}
-  - component: {fileID: 7538655850830643326}
   - component: {fileID: 7538655850830643327}
+  - component: {fileID: 4021042116673593721}
+  - component: {fileID: 9012504589377801670}
   m_Layer: 5
   m_Name: Book2
   m_TagString: Untagged
@@ -722,25 +887,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &7538655850830643326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7538655850830643268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21130936ee93d14439e5bf5fc3e32c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lockXAxis: 0
-  lockYAxis: 0
-  enableMovement: 0
-  xMin: -789.33
-  xMax: 789.33
-  yMin: -502.87
-  yMax: 502.87
 --- !u!114 &7538655850830643327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,10 +902,45 @@ MonoBehaviour:
   FlagFunction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7538655850830643326}
-        m_TargetAssemblyTypeName: Puzzle1BookDrag, Assembly-CSharp
-        m_MethodName: EnableMovement
-        m_Mode: 1
+      - m_Target: {fileID: 4021042116673593721}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetMovement
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  flagNameRef: puzzle1/book1Drag
+--- !u!114 &4021042116673593721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538655850830643268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f86d278d43eccc46a6bb4f6a73a3178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockXAxis: 0
+  lockYAxis: 0
+  enableMovement: 0
+  xMin: -789.33
+  xMax: 789.33
+  yMin: -502.87
+  yMax: 502.87
+  onBeginDragFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4021042116673593721}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetRaycastBlocking
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -768,7 +949,61 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  flagNameRef: puzzle1/book1Drag
+  onEndDragFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4021042116673593721}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetRaycastBlocking
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &9012504589377801670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538655850830643268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0f47e5fd04c894ca39e14fceb6d5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlagFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4021042116673593721}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetMovement
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4021042116673593721}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetRaycastBlocking
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  flagNameRef: puzzle1/book2Drag
 --- !u!1 &7538655851811638152
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,8 +1213,9 @@ GameObject:
   - component: {fileID: 7538655852814462514}
   - component: {fileID: 7538655852814462516}
   - component: {fileID: 7538655852814462517}
-  - component: {fileID: 7538655852814462512}
   - component: {fileID: 7538655852814462513}
+  - component: {fileID: 4668763789108119795}
+  - component: {fileID: 8229119122100461567}
   m_Layer: 5
   m_Name: Book3
   m_TagString: Untagged
@@ -1077,25 +1313,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &7538655852814462512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7538655852814462518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21130936ee93d14439e5bf5fc3e32c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lockXAxis: 0
-  lockYAxis: 0
-  enableMovement: 0
-  xMin: -789.33
-  xMax: 789.33
-  yMin: -502.87
-  yMax: 502.87
 --- !u!114 &7538655852814462513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,10 +1328,45 @@ MonoBehaviour:
   FlagFunction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7538655852814462512}
+      - m_Target: {fileID: 4668763789108119795}
         m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
-        m_MethodName: EnableMovement
-        m_Mode: 1
+        m_MethodName: SetMovement
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  flagNameRef: puzzle1/book2Drag
+--- !u!114 &4668763789108119795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538655852814462518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f86d278d43eccc46a6bb4f6a73a3178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockXAxis: 0
+  lockYAxis: 0
+  enableMovement: 0
+  xMin: -789.33
+  xMax: 789.33
+  yMin: -502.87
+  yMax: 502.87
+  onBeginDragFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4668763789108119795}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetRaycastBlocking
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1123,4 +1375,58 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  flagNameRef: puzzle1/book2Drag
+  onEndDragFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4668763789108119795}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetRaycastBlocking
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &8229119122100461567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538655852814462518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0f47e5fd04c894ca39e14fceb6d5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlagFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4668763789108119795}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetMovement
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4668763789108119795}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: SetMovement
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  flagNameRef: puzzle1/book3Drag

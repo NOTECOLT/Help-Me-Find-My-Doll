@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class DraggableItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler {
     // Generic MonoBehaviour Class for draggable items.
     
     // PRIVATE VARIABLES
     private Canvas _canvas;
+    private CanvasGroup _canvasGroup;
     protected RectTransform _rectTransform;
 
     // PUBLIC VARAIABLES
@@ -17,15 +19,21 @@ public class DraggableItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     public float xMin, xMax = 0.0f;
     public float yMin, yMax = 0.0f;
 
+    public UnityEvent<PointerEventData> onBeginDragFunction;
+    public UnityEvent<PointerEventData> onEndDragFunction;
+
+
     protected virtual void Awake() {
         _rectTransform = GetComponent<RectTransform>();
+        _canvasGroup = GetComponent<CanvasGroup>();
     }
 
     void Start() {
         _canvas = GetComponentInParent<Canvas>();
     }
     public virtual void OnBeginDrag(PointerEventData eventData) {
-        
+        if (enableMovement)
+            onBeginDragFunction.Invoke(eventData);
     }
 
     public void OnDrag(PointerEventData eventData) {
@@ -42,18 +50,19 @@ public class DraggableItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     }
 
     public virtual void OnEndDrag(PointerEventData eventData) {
-
+        if (enableMovement)
+            onEndDragFunction.Invoke(eventData);
     }
 
     public void OnPointerDown(PointerEventData eventData){
         
     }
 
-    public void EnableMovement() {
-        enableMovement = true;
+    public void SetMovement(bool value) {
+        enableMovement = value;
     }
 
-    public void DisableMovement() {
-        enableMovement = false;
+    public void SetRaycastBlocking(bool value) {
+        _canvasGroup.blocksRaycasts = value;
     }
 }

@@ -634,10 +634,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flagList:
   - tutorial/chairDrag
+  - tutorial/dollGet
   - puzzle1/book1Drag
   - puzzle1/book2Drag
   - puzzle1/book3Drag
   - puzzle1/chairDrag
+  - puzzle1/keyAGet
 --- !u!4 &391586184
 Transform:
   m_ObjectHideFlags: 0
@@ -2866,6 +2868,22 @@ PrefabInstance:
     - target: {fileID: 7154433632330729679, guid: a7834ea0d3cc2fd468c87ebc146c0206, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538655850830643327, guid: a7834ea0d3cc2fd468c87ebc146c0206, type: 3}
+      propertyPath: FlagFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538655850830643327, guid: a7834ea0d3cc2fd468c87ebc146c0206, type: 3}
+      propertyPath: FlagFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMovement
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538655850830643327, guid: a7834ea0d3cc2fd468c87ebc146c0206, type: 3}
+      propertyPath: FlagFunction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DraggableItem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538655850830643327, guid: a7834ea0d3cc2fd468c87ebc146c0206, type: 3}
+      propertyPath: FlagFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7834ea0d3cc2fd468c87ebc146c0206, type: 3}

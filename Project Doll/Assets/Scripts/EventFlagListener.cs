@@ -14,8 +14,11 @@ public class EventFlagListener : MonoBehaviour {
     public string flagNameRef;
 
     private void OnFlagTick(string flagName) {
-        if (flagName == flagNameRef)
+        if (flagName == flagNameRef) {
+            print(flagName + " event received by " + gameObject.name);
             FlagFunction.Invoke();
+        }
+            
     }
 
     void OnDstroy() {

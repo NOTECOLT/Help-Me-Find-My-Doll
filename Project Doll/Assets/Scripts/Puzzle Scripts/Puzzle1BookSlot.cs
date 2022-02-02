@@ -16,10 +16,6 @@ public class Puzzle1BookSlot : DroppableSlot {
             eventData.pointerDrag.GetComponent<RectTransform>().localRotation = Quaternion.Euler(0, 0, 90);
             _bookCount += 1;
 
-            // Makes Book immovable after being dropped
-            eventData.pointerDrag.GetComponent<DraggableItem>().enableMovement = false;
-            eventData.pointerDrag.GetComponent<CanvasGroup>().blocksRaycasts = false;
-
             // Makes book child of book slot transform
             eventData.pointerDrag.transform.SetParent(_bookSlots[_bookCount - 1].transform, false);
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
