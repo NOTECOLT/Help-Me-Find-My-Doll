@@ -7,12 +7,12 @@ public class GameSessionManager : MonoBehaviour
 {
     // Configuration parameters
     [SerializeField] float[] timePeriodsByPercentage;
-    [SerializeField] FOVProfiles[] fovProfiles;
+    // [SerializeField] FOVProfiles[] fovProfiles;
     [SerializeField] Text timeText;
     [SerializeField] bool allowGameEnd = false;
     [SerializeField] TimeManager timeManager;
     [SerializeField] SceneLoader sceneLoader;
-    [SerializeField] FOV fov;
+    // [SerializeField] FOV fov;
 
     // variables
     int timeIndex;
@@ -21,31 +21,31 @@ public class GameSessionManager : MonoBehaviour
     void Start()
     {
         // Set up initial FOV profile
-        fov.SetFOVSettings(fovProfiles[0].GetFOV(), fovProfiles[0].GetViewDistance());
+        // fov.SetFOVSettings(fovProfiles[0].GetFOV(), fovProfiles[0].GetViewDistance());
         timeIndex = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CycleThroughFOVProfile();
+        // CycleThroughFOVProfile();
         SetTimeText();
         End();
     }
 
-    private void CycleThroughFOVProfile()
-    {
-        // Cycle through FOV profiles
-        // Uses timeElapsedPercentage to determine when to cycle through FOV profile
-        if (timeIndex < (timePeriodsByPercentage.Length))
-        {
-            if ((timeManager.GetTimeElapsedPercentage() >= timePeriodsByPercentage[timeIndex]))
-            {
-                fov.SetFOVSettings(fovProfiles[timeIndex].GetFOV(), fovProfiles[timeIndex].GetViewDistance());
-                timeIndex++;
-            }
-        }
-    }
+    // private void CycleThroughFOVProfile()
+    // {
+    //     // Cycle through FOV profiles
+    //     // Uses timeElapsedPercentage to determine when to cycle through FOV profile
+    //     if (timeIndex < (timePeriodsByPercentage.Length))
+    //     {
+    //         if ((timeManager.GetTimeElapsedPercentage() >= timePeriodsByPercentage[timeIndex]))
+    //         {
+    //             fov.SetFOVSettings(fovProfiles[timeIndex].GetFOV(), fovProfiles[timeIndex].GetViewDistance());
+    //             timeIndex++;
+    //         }
+    //     }
+    // }
 
     private void SetTimeText()
     {
