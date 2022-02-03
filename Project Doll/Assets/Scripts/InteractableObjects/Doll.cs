@@ -9,6 +9,6 @@ public class Doll : Interactables
     {
         EventFlagManager.Instance.FlagTickTrue("dollCollected");
         Debug.Log(EventFlagManager.Instance.GetFlagValue("dollCollected"));
-         Destroy(gameObject);
+        Destroy(gameObject);
     }
 }
