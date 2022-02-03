@@ -39,14 +39,14 @@ public class EventFlagManager : MonoBehaviour {
             return;
         }
 
-        
+        print("Flag Called: " + flagName);   
+        _flagDict[flagName] = true;
+
         if (onFlagTickTrue == null) {
             return;
         }
         
 
-        print("Flag Called: " + flagName);
-        _flagDict[flagName] = true;
         onFlagTickTrue(flagName);
     }
 

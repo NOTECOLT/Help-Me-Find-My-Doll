@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class DraggableItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler {
     // Generic MonoBehaviour Class for draggable items.
     
     // PRIVATE VARIABLES
-    [SerializeField] private Canvas _canvas;
-    private RectTransform _rectTransform;
+    private Canvas _canvas;
+    private CanvasGroup _canvasGroup;
+    protected RectTransform _rectTransform;
 
     // PUBLIC VARAIABLES
     public bool lockXAxis, lockYAxis = false; // Locking either axis will make it so you can only drag the object along the other
@@ -17,11 +19,21 @@ public class DraggableItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     public float xMin, xMax = 0.0f;
     public float yMin, yMax = 0.0f;
 
-    void Awake() {
+    public UnityEvent<PointerEventData> onBeginDragFunction;
+    public UnityEvent<PointerEventData> onEndDragFunction;
+
+
+    protected virtual void Awake() {
         _rectTransform = GetComponent<RectTransform>();
+        _canvasGroup = GetComponent<CanvasGroup>();
     }
-    public void OnBeginDrag(PointerEventData eventData) {
-        
+
+    void Start() {
+        _canvas = GetComponentInParent<Canvas>();
+    }
+    public virtual void OnBeginDrag(PointerEventData eventData) {
+        if (enableMovement)
+            onBeginDragFunction.Invoke(eventData);
     }
 
     public void OnDrag(PointerEventData eventData) {
@@ -37,11 +49,20 @@ public class DraggableItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
 
     }
 
-    public void OnEndDrag(PointerEventData eventData) {
-
+    public virtual void OnEndDrag(PointerEventData eventData) {
+        if (enableMovement)
+            onEndDragFunction.Invoke(eventData);
     }
 
     public void OnPointerDown(PointerEventData eventData){
         
+    }
+
+    public void SetMovement(bool value) {
+        enableMovement = value;
+    }
+
+    public void SetRaycastBlocking(bool value) {
+        _canvasGroup.blocksRaycasts = value;
     }
 }

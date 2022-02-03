@@ -11,5 +11,9 @@ public class PuzzleObject : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.E) && !PuzzleInterfaceManager.Instance.hasActiveInterface)
             PuzzleInterfaceManager.Instance.ActivateInterface(_interfaceName);
     }
+
+    public void ChangeCurrentInterface(string interfaceName) {
+        _interfaceName = interfaceName;
+    }
 }
 
