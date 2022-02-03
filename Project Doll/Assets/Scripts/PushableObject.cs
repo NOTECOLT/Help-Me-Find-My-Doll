@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PushableObject : Interactables
 {
-    [SerializeField] float distanceFromPlayer = 0.1f;
+    [SerializeField] private float _distanceLetGo = 1.5f;
 
     Player player;
     float playerMovespeed;
     Vector3 delta;
     bool moving;
-    float deltaX;
-    float deltaY;
     RaycastHit2D hit;
     BoxCollider2D boxCollider;
     Rigidbody2D myRigidbody;
@@ -25,27 +23,18 @@ public class PushableObject : Interactables
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
+    private void Update() {
+        if (moving) {
+            if (Vector2.Distance(transform.position, player.transform.position) > _distanceLetGo) {
+                ToggleMove();
+            }
+        }
+    }
     private void FixedUpdate()
     {
-        MoveObject();
-    }
-
-    public void MoveObject()
-    {
-        if (moving)
-        {
-            /*
-            Debug.Log("moving");
-            transform.position = new Vector2(player.transform.position.x + delta.x, player.transform.position.y + delta.y);
-            Debug.Log(transform.position);*/
-
-            Debug.Log("moving");
-            deltaY = Input.GetAxisRaw("Vertical") * Time.deltaTime * playerMovespeed;
-            deltaX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * playerMovespeed;
-            Debug.Log(Mathf.Sign(deltaY));
-            Debug.Log(deltaX);
-
-            myRigidbody.velocity = new Vector2(deltaX * 50, deltaY * 50);
+        if (moving) {
+            Debug.Log(Vector2.Distance(transform.position, player.transform.position));
+            myRigidbody.velocity = player.gameObject.GetComponent<Rigidbody2D>().velocity;
         }
     }
 
@@ -56,20 +45,20 @@ public class PushableObject : Interactables
         player.SetPushableObject(GetComponent<PushableObject>());
         delta = transform.position - player.transform.position;
         delta = new Vector3(delta.x, delta.y, delta.z);
-        Physics2D.IgnoreCollision(player.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>(), moving);
+        //Physics2D.IgnoreCollision(player.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>(), moving);
     }
 
-    public Collider2D GetPushableObjectColliderX()
-    {
-        deltaX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * playerMovespeed;
-        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(deltaX, 0), boxCollider.size.x + Mathf.Abs(deltaX), LayerMask.GetMask("BlockFOV"));
-        return hit.collider;
-    }
+    // public Collider2D GetPushableObjectColliderX()
+    // {
+    //     deltaX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * playerMovespeed;
+    //     hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(deltaX, 0), boxCollider.size.x + Mathf.Abs(deltaX), LayerMask.GetMask("BlockFOV"));
+    //     return hit.collider;
+    // }
 
-    public Collider2D GetPushableObjectColliderY()
-    {
-        deltaY = Input.GetAxisRaw("Vertical") * Time.deltaTime * playerMovespeed;
-        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, deltaY), boxCollider.size.y + Mathf.Abs(deltaY), LayerMask.GetMask("BlockFOV"));
-        return hit.collider;
-    }
+    // public Collider2D GetPushableObjectColliderY()
+    // {
+    //     deltaY = Input.GetAxisRaw("Vertical") * Time.deltaTime * playerMovespeed;
+    //     hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, deltaY), boxCollider.size.y + Mathf.Abs(deltaY), LayerMask.GetMask("BlockFOV"));
+    //     return hit.collider;
+    // }
 }

@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     // Variables
     float[] directionFacing;
     RaycastHit2D raycastHitInteractables;
-    RaycastHit2D hit;
     float deltaX;
     float deltaY;
     Collider2D carriedObjectRaycastHit;
@@ -23,7 +22,6 @@ public class Player : MonoBehaviour
     // cached
     Rigidbody2D myRigidbody;
     PushableObject carriedObjectCollider;
-    Collider2D pushableObjectHit;
 
     // Start is called before the first frame update
     void Start()
@@ -49,61 +47,14 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        deltaX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * playerMovespeed;
-        deltaY = Input.GetAxisRaw("Vertical") * Time.deltaTime * playerMovespeed;
-
-        /*
-        if (!isCarrying)
-        {
-            // y axis
-            hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, deltaY), Mathf.Abs(deltaY), LayerMask.GetMask("BlockFOV", "Interactables"));
-            if (hit.collider == null)
-            {
-                // Move 
-                transform.position = new Vector2(transform.position.x, transform.position.y + deltaY);
-            }
-            
-            // x axis
-            hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(deltaX, 0), Mathf.Abs(deltaX), LayerMask.GetMask("BlockFOV", "Interactables"));
-            if (hit.collider == null)
-            {
-                // Move
-                transform.position = new Vector2(transform.position.x + deltaX, transform.position.y);
-            }
-        }
-
-        if (isCarrying)
-        {
-            // y axis
-            hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, deltaY), Mathf.Abs(deltaY), LayerMask.GetMask("BlockFOV"));
-            pushableObjectHit = carriedObjectCollider.GetPushableObjectColliderY();
-            if (hit.collider == null && pushableObjectHit == null)
-            {
-                // Move 
-                transform.position = new Vector2(transform.position.x, transform.position.y + deltaY);
-            }
-
-            // x axis
-            hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(deltaX, 0), Mathf.Abs(deltaX), LayerMask.GetMask("BlockFOV"));
-            pushableObjectHit = carriedObjectCollider.GetPushableObjectColliderX();
-            if (hit.collider == null && pushableObjectHit == null)
-            {
-                // Move
-                transform.position = new Vector2(transform.position.x + deltaX, transform.position.y);
-            }
-
-            
-        }*/
-
-
         
         // Moves player
         deltaX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * playerMovespeed;
         deltaY = Input.GetAxisRaw("Vertical") * Time.deltaTime * playerMovespeed;
 
-        myRigidbody.velocity = new Vector2(deltaX*50, deltaY*50);
-        //transform.position = new Vector2(transform.position.x + deltaX, transform.position.y + deltaY);
-        
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        input = Vector2.ClampMagnitude(input, 1f);
+        myRigidbody.velocity = input * Time.deltaTime * playerMovespeed * 50;
     }
 
     private Vector2 GetPlayerDirection()
@@ -126,9 +77,6 @@ public class Player : MonoBehaviour
             }
         }
         
-        
-        
-        
         Vector2 directionVector = new Vector2(directionFacing[0], directionFacing[1]);
         // Debug.Log(GetAngleFromVector(directionVector));
         return directionVector;
@@ -145,8 +93,7 @@ public class Player : MonoBehaviour
         raycastHitInteractables = Physics2D.BoxCast(transform.position, boxCollider.size, 0, GetPlayerDirection(), interactDistance, LayerMask.GetMask(layerMaskInteractables));
         //raycastHitInteractables = Physics2D.Raycast(transform.position, GetPlayerDirection(), interactDistance, layerMaskInteractables);
 
-         if (raycastHitInteractables)
-        {
+        if (raycastHitInteractables) {
             raycastHitInteractables.collider.SendMessage("OnAction");
             carriedObjectRaycastHit = raycastHitInteractables.collider;
         }

@@ -15,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - FOVMask
-  - HiddenOutsideFOVMask
-  - BlockFOV
+  - 
+  - 
+  - 
   - Interactables
   - InteractablesWalkable
   - Black
