@@ -14,7 +14,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - FloatingText
   - FOVMask
   - HiddenOutsideFOVMask
   - BlockFOV
@@ -42,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: FloatingText
+    uniqueID: 3922265909
     locked: 0
