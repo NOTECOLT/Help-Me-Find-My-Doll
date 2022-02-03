@@ -345,6 +345,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3761219530931517947, guid: cc9561697bdfde44c820f0bd411f4c7f, type: 3}
+      propertyPath: layerMaskInteractables.m_Bits
+      value: 6144
+      objectReference: {fileID: 0}
+    - target: {fileID: 3761219530931517947, guid: cc9561697bdfde44c820f0bd411f4c7f, type: 3}
       propertyPath: collidedMasks.Array.data[0].m_Bits
       value: 1024
       objectReference: {fileID: 0}
@@ -1010,17 +1014,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 686370815}
-  - component: {fileID: 686370817}
   - component: {fileID: 686370816}
   - component: {fileID: 686370818}
   - component: {fileID: 686370819}
-  m_Layer: 11
+  - component: {fileID: 686370817}
+  m_Layer: 12
   m_Name: Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &686370815
 Transform:
   m_ObjectHideFlags: 0
@@ -1047,18 +1051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de33fdf20a47574d9facf4bef721269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &686370817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686370814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f4fc2e88fa2454886ca728bccb04db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _key: 65000000
   _functions:
   - m_PersistentCalls:
@@ -1075,6 +1067,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!50 &686370817
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686370814}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!212 &686370818
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1431,7 +1444,6 @@ GameObject:
   - component: {fileID: 937598326}
   - component: {fileID: 937598329}
   - component: {fileID: 937598328}
-  - component: {fileID: 937598327}
   - component: {fileID: 937598330}
   m_Layer: 11
   m_Name: Doll
@@ -1454,34 +1466,6 @@ Transform:
   m_Father: {fileID: 28185319}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &937598327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937598325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f4fc2e88fa2454886ca728bccb04db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _key: 65000000
-  _functions:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 937598330}
-        m_TargetAssemblyTypeName: Doll, Assembly-CSharp
-        m_MethodName: OnCollect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!61 &937598328
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1571,6 +1555,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0e8712c66884947960cc1f33de6e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _key: 65000000
+  _functions:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 937598330}
+        m_TargetAssemblyTypeName: Doll, Assembly-CSharp
+        m_MethodName: OnCollect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1071760665
 GameObject:
   m_ObjectHideFlags: 0
