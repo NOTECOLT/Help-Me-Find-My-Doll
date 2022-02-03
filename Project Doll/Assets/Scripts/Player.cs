@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     // Config params
     [SerializeField] float playerMovespeed = 100f;
     [SerializeField] float interactDistance = 10f;
-    [SerializeField] LayerMask layerMaskInteractables;
+    [SerializeField] string[] layerMaskInteractables;
     [SerializeField] bool isCarrying; // for debug
     // Cached references
     FOV fov;
@@ -139,8 +139,8 @@ public class Player : MonoBehaviour
     private void FindInteractables() {
         // Uses raycast2D to check if there are interactables that can be interacted with
         Debug.DrawRay(transform.position, GetPlayerDirection(), Color.white, 0.01f);
-        
-        raycastHitInteractables = Physics2D.BoxCast(transform.position, boxCollider.size, 0, GetPlayerDirection(), interactDistance, layerMaskInteractables);
+
+        raycastHitInteractables = Physics2D.BoxCast(transform.position, boxCollider.size, 0, GetPlayerDirection(), interactDistance, LayerMask.GetMask(layerMaskInteractables));
         //raycastHitInteractables = Physics2D.Raycast(transform.position, GetPlayerDirection(), interactDistance, layerMaskInteractables);
 
          if (raycastHitInteractables)
