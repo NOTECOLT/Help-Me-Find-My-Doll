@@ -10,7 +10,9 @@ public class Interactables : MonoBehaviour {
     [SerializeField] private KeyCode[] _key = new KeyCode[] {KeyCode.E};
     [SerializeField] private UnityEvent[] _functions; 
 
+    // Gets called when player interacts with interactables object
     public void OnAction() {
+        // loops through KeyCode[] and the respective functions
         for (int i = 0; i < _key.Length; i++) {
             if (Input.GetKeyDown(_key[i])) {
                 _functions[i].Invoke();
