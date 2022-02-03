@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     [SerializeField] string[] layerMaskInteractables;
     [SerializeField] bool isCarrying; // for debug
     // Cached references
-    FOV fov;
     BoxCollider2D boxCollider;
 
     // Variables
@@ -21,18 +20,18 @@ public class Player : MonoBehaviour
     float deltaY;
     Collider2D carriedObjectRaycastHit;
 
-
+    // cached
+    Rigidbody2D myRigidbody;
     PushableObject carriedObjectCollider;
     Collider2D pushableObjectHit;
 
     // Start is called before the first frame update
     void Start()
     {
-        fov = FindObjectOfType<FOV>();
         directionFacing = new float[2];
-        fov.SetDirection(Vector3.right);
         boxCollider = GetComponent<BoxCollider2D>();
         isCarrying = false;
+        myRigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -46,7 +45,6 @@ public class Player : MonoBehaviour
     {
         if (!PuzzleInterfaceManager.Instance.hasActiveInterface) // Prevent player from moving when there is an active puzzle
             Move();
-        SetPlayerFOV(deltaX, deltaY);
     }
 
     private void Move()
@@ -54,6 +52,7 @@ public class Player : MonoBehaviour
         deltaX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * playerMovespeed;
         deltaY = Input.GetAxisRaw("Vertical") * Time.deltaTime * playerMovespeed;
 
+        /*
         if (!isCarrying)
         {
             // y axis
@@ -92,16 +91,19 @@ public class Player : MonoBehaviour
                 // Move
                 transform.position = new Vector2(transform.position.x + deltaX, transform.position.y);
             }
-        }
+
+            
+        }*/
 
 
-        /*
+        
         // Moves player
         deltaX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * playerMovespeed;
         deltaY = Input.GetAxisRaw("Vertical") * Time.deltaTime * playerMovespeed;
 
-        transform.position = new Vector2(transform.position.x + deltaX, transform.position.y + deltaY);
-        */
+        myRigidbody.velocity = new Vector2(deltaX*50, deltaY*50);
+        //transform.position = new Vector2(transform.position.x + deltaX, transform.position.y + deltaY);
+        
     }
 
     private Vector2 GetPlayerDirection()
@@ -147,20 +149,6 @@ public class Player : MonoBehaviour
         {
             raycastHitInteractables.collider.SendMessage("OnAction");
             carriedObjectRaycastHit = raycastHitInteractables.collider;
-        }
-    }
-
-    private void SetPlayerFOV(float deltaX, float deltaY)
-    {
-        // Moves FOV cone and direction based on player's movement
-        fov.SetOrigin(transform.position);
-        if (!(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0))
-        {
-            if (!isCarrying)
-            {
-                fov.SetDirection(new Vector3(-directionFacing[1], directionFacing[0]));
-            }
-            
         }
     }
 

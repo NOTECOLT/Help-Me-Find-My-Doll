@@ -14,6 +14,7 @@ public class PushableObject : Interactables
     float deltaY;
     RaycastHit2D hit;
     BoxCollider2D boxCollider;
+    Rigidbody2D myRigidbody;
 
     // Start is called before the first frame update
     private void Start()
@@ -21,6 +22,7 @@ public class PushableObject : Interactables
         boxCollider = GetComponent<BoxCollider2D>();
         player = FindObjectOfType<Player>();
         playerMovespeed = player.GetPlayerMovespeed();
+        myRigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -37,34 +39,13 @@ public class PushableObject : Interactables
             transform.position = new Vector2(player.transform.position.x + delta.x, player.transform.position.y + delta.y);
             Debug.Log(transform.position);*/
 
-            
+            Debug.Log("moving");
             deltaY = Input.GetAxisRaw("Vertical") * Time.deltaTime * playerMovespeed;
             deltaX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * playerMovespeed;
             Debug.Log(Mathf.Sign(deltaY));
             Debug.Log(deltaX);
 
-            // y axis
-            hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, deltaY), boxCollider.size.y + Mathf.Abs(deltaY), LayerMask.GetMask("BlockFOV"));
-            //player.SetPushableObject(hit.collider);
-            if (hit.collider == null)
-            {
-                // Move 
-                transform.position = new Vector2(player.transform.position.x + delta.x, player.transform.position.y + delta.y);
-            }
-            else
-            Debug.Log(hit.collider);
-            
-            
-            // x axis
-            hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(deltaX, 0), boxCollider.size.x + Mathf.Abs(deltaX), LayerMask.GetMask("BlockFOV"));
-            //player.SetPushableObject(hit.collider);
-            if (hit.collider == null)
-            {
-                // Move
-                transform.position = new Vector2(player.transform.position.x + delta.x, player.transform.position.y + delta.y);
-            }
-            else
-            Debug.Log(hit.collider);
+            myRigidbody.velocity = new Vector2(deltaX * 50, deltaY * 50);
         }
     }
 
