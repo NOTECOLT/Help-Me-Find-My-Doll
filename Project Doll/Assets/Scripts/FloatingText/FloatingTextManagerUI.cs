@@ -36,6 +36,8 @@ public class FloatingTextManagerUI : MonoBehaviour
             Quaternion.identity) as GameObject;
             text = floatingText;
 
+            floatingText.transform.SetParent(transform, false);
+
             // Set text
             //floatingText.GetComponent<TextMeshProUGUI>().text = dialogueQueue.Dequeue();
             floatingText.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = dialogueQueue.Dequeue();

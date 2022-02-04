@@ -2725,7 +2725,7 @@ SpriteRenderer:
   m_SortingLayerID: -1868163845
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fb132949ecaa08c498933d58458a9175, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8bfdb55a1414fb548ad2dd2c89ba05bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4432,6 +4432,26 @@ PrefabInstance:
     - target: {fileID: 4256402729087591754, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256402729087591756, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256402729087591756, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256402729087591756, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256402729087591756, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256402729087591756, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 4256402729087591793, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
       propertyPath: m_Name
