@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4256402729087591756}
   - component: {fileID: 4256402729087591759}
   - component: {fileID: 4256402729087591758}
+  - component: {fileID: 1342980058}
   m_Layer: 5
   m_Name: FloatingTextManagerCanvas
   m_TagString: Untagged
@@ -58,7 +59,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &4256402729087591756
 MonoBehaviour:
@@ -112,4 +113,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b785d03968d2e3842ae172cebc858f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatingTextPrefab: {fileID: 0}
+  floatingTextPrefab: {fileID: 1723010388053797673, guid: 3ec813ae173d46b4b81f8455f0627f60, type: 3}
+--- !u!210 &1342980058
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4256402729087591793}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0

@@ -12,6 +12,6 @@ public class UIDialogue : Interactables
 
     public void OnInteract()
     {
-        floatingTextManagerUI.ShowText(dialogue, textDuration);
+        floatingTextManagerUI.ShowText(textDuration);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PuzzleInterfaceManager : MonoBehaviour {
     // Manager used to cycle through which puzzle interface is active
-    
+    [SerializeField] FloatingTextManagerUI floatingTextManagerUI;
     
     // SINGLETON PATTERN
     private static PuzzleInterfaceManager _instance;
@@ -54,6 +54,8 @@ public class PuzzleInterfaceManager : MonoBehaviour {
     private IEnumerator DeactivateInterface() {
         yield return new WaitForSeconds(.1f);
         hasActiveInterface = false;
+
+        floatingTextManagerUI.ClearText();
     }
 
 

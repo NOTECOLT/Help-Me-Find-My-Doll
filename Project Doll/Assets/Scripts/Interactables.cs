@@ -16,6 +16,7 @@ public class Interactables : MonoBehaviour {
         for (int i = 0; i < _key.Length; i++) {
             if (Input.GetKeyUp(_key[i]) && !PuzzleInterfaceManager.Instance.hasActiveInterface) {
                 _functions[i].Invoke();
+                Debug.Log("Interacted with " + gameObject.name);
             }
         }
     }
