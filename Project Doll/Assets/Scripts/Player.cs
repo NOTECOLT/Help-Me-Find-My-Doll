@@ -115,9 +115,4 @@ public class Player : MonoBehaviour
     {
         this.carriedObjectCollider = objectBeingMoved;
     }
-
-    public void SetPushableCollider(Collider2D pushCollider)
-    {
-
-    }
 }

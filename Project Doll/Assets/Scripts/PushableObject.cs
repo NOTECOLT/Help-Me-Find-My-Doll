@@ -6,59 +6,52 @@ public class PushableObject : Interactables
 {
     [SerializeField] private float _distanceLetGo = 1.5f;
 
-    Player player;
-    float playerMovespeed;
-    Vector3 delta;
-    bool moving;
-    RaycastHit2D hit;
-    BoxCollider2D boxCollider;
-    Rigidbody2D myRigidbody;
+    private Player _player;
+    private Vector3 _delta;
+    private bool _moving;
+    private Rigidbody2D _myRigidbody;
 
     // Start is called before the first frame update
-    private void Start()
-    {
-        boxCollider = GetComponent<BoxCollider2D>();
-        player = FindObjectOfType<Player>();
-        playerMovespeed = player.GetPlayerMovespeed();
-        myRigidbody = GetComponent<Rigidbody2D>();
+    private void Start() {
+        _player = FindObjectOfType<Player>();
+        _myRigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Update() {
-        if (moving) {
-            if (Vector2.Distance(transform.position, player.transform.position) > _distanceLetGo) {
+        if (_myRigidbody.bodyType == RigidbodyType2D.Dynamic && _moving) {
+            if (Vector2.Distance(transform.position, _player.transform.position) > _distanceLetGo) {
                 ToggleMove();
             }
         }
     }
-    private void FixedUpdate()
-    {
-        if (moving) {
-            Debug.Log(Vector2.Distance(transform.position, player.transform.position));
-            myRigidbody.velocity = player.gameObject.GetComponent<Rigidbody2D>().velocity;
+    private void FixedUpdate() {
+        if (_myRigidbody.bodyType == RigidbodyType2D.Dynamic && _moving) {
+            Debug.Log(Vector2.Distance(transform.position, _player.transform.position));
+            _myRigidbody.velocity = _player.gameObject.GetComponent<Rigidbody2D>().velocity;
         }
     }
 
-    public void ToggleMove()
-    {
-        moving = !moving;
-        player.ToggleIsCarrying();
-        player.SetPushableObject(GetComponent<PushableObject>());
-        delta = transform.position - player.transform.position;
-        delta = new Vector3(delta.x, delta.y, delta.z);
-        //Physics2D.IgnoreCollision(player.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>(), moving);
+    public void ToggleMove() {
+        if (_myRigidbody.bodyType == RigidbodyType2D.Dynamic) {
+            _moving = !_moving;
+            _player.ToggleIsCarrying();
+            _player.SetPushableObject(GetComponent<PushableObject>());
+            _delta = transform.position - _player.transform.position;
+            _delta = new Vector3(_delta.x, _delta.y, _delta.z);
+        }
+
     }
 
-    // public Collider2D GetPushableObjectColliderX()
-    // {
-    //     deltaX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * playerMovespeed;
-    //     hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(deltaX, 0), boxCollider.size.x + Mathf.Abs(deltaX), LayerMask.GetMask("BlockFOV"));
-    //     return hit.collider;
-    // }
+    public void SetStatic() {
+        _myRigidbody.bodyType = RigidbodyType2D.Static;
+        if (_moving) {
+            ToggleMove();
+            _player.ToggleIsCarrying();
+        }
+    }
 
-    // public Collider2D GetPushableObjectColliderY()
-    // {
-    //     deltaY = Input.GetAxisRaw("Vertical") * Time.deltaTime * playerMovespeed;
-    //     hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, deltaY), boxCollider.size.y + Mathf.Abs(deltaY), LayerMask.GetMask("BlockFOV"));
-    //     return hit.collider;
-    // }
+    public void SetDynamic() {
+        _myRigidbody.bodyType = RigidbodyType2D.Dynamic;
+    }
+
 }
