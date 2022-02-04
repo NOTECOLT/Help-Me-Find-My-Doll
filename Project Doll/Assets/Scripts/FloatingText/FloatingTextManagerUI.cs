@@ -31,16 +31,17 @@ public class FloatingTextManagerUI : MonoBehaviour
         {
             GameObject floatingText = Instantiate(
             floatingTextPrefab,
-            Vector3.zero,
+            new Vector3(960, 540, 0),
             Quaternion.identity) as GameObject;
             text = floatingText;
 
             // Set text
-            floatingText.GetComponent<TextMeshProUGUI>().text = dialogueQueue.Dequeue();
+            //floatingText.GetComponent<TextMeshProUGUI>().text = dialogueQueue.Dequeue();
+            floatingText.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = dialogueQueue.Dequeue();
 
             // Create UI in TextManagerUI canvas and move to bottom
             floatingText.transform.SetParent(transform);
-            floatingText.transform.position = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0, 0));
+            floatingText.transform.position = Camera.main.ViewportToScreenPoint(new Vector3(0.5f, 0.5f, 0));
 
             Destroy(floatingText, textDuration);
             yield return new WaitForSeconds(textDuration);
