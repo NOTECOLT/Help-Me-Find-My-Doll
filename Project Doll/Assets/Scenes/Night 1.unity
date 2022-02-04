@@ -386,6 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: Window
+  hasDialogue: 0
 --- !u!114 &90543589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,6 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: Dresser
+  hasDialogue: 0
 --- !u!114 &425641870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1623,7 +1625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537443772}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.68, y: 4.48, z: 0}
+  m_LocalPosition: {x: 0.12, y: 4.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1669700358}
@@ -2389,7 +2391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844605468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.21, y: 4.9, z: 0}
+  m_LocalPosition: {x: -4.11, y: 4.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910976642}
@@ -2476,6 +2478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: TutorialPuzzle
+  hasDialogue: 0
 --- !u!114 &844605474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2941,6 +2944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: Fan
+  hasDialogue: 0
 --- !u!114 &1051750822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3191,6 +3195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0249e1f3c1bbf3e4da5489d6e4723ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floatingTextManagerUI: {fileID: 0}
   hasActiveInterface: 0
 --- !u!1001 &1339826514
 PrefabInstance:
@@ -3407,6 +3412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: FloorCrack-NoLight
+  hasDialogue: 0
 --- !u!114 &1414567897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3876,6 +3882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: UnderBed
+  hasDialogue: 0
 --- !u!114 &1537076636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4462,8 +4469,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760715126}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.61, y: -0.07, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.91, y: -1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910976642}
@@ -4482,6 +4489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: ToyBox
+  hasDialogue: 0
 --- !u!114 &1760715129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4769,6 +4777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: Closet-BoxClose
+  hasDialogue: 0
 --- !u!114 &1813302625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5021,6 +5030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: TableNote-NoLight
+  hasDialogue: 0
 --- !u!114 &1838584120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5230,6 +5240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interfaceName: Carpet
+  hasDialogue: 0
 --- !u!114 &1886528163
 MonoBehaviour:
   m_ObjectHideFlags: 0
