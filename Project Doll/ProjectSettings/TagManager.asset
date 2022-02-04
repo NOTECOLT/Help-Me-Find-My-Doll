@@ -58,4 +58,6 @@ TagManager:
     uniqueID: 1985657663
   - name: FloatingText
     uniqueID: 3922265909
+  - name: UI BG
+    uniqueID: 59733429
     locked: 0
