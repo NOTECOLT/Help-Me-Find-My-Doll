@@ -22,4 +22,5 @@ public class ToggleObjectPos : MonoBehaviour {
         else
             onFalseFunction.Invoke();
     }
+    
 }
