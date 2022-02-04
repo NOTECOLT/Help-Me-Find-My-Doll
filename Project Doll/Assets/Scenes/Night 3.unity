@@ -316,6 +316,7 @@ Transform:
   - {fileID: 830805368}
   - {fileID: 636549660}
   - {fileID: 1815280994}
+  - {fileID: 695242674}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -334,6 +335,8 @@ GameObject:
   - component: {fileID: 103414012}
   - component: {fileID: 103414014}
   - component: {fileID: 103414013}
+  - component: {fileID: 103414015}
+  - component: {fileID: 103414016}
   m_Layer: 11
   m_Name: FloorCrack
   m_TagString: Untagged
@@ -516,8 +519,8 @@ MonoBehaviour:
   FlagFunction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 103414012}
-        m_TargetAssemblyTypeName: PuzzleObject, Assembly-CSharp
+      - m_Target: {fileID: 103414015}
+        m_TargetAssemblyTypeName: Puzzle2FloorCrack, Assembly-CSharp
         m_MethodName: ChangeCurrentInterface
         m_Mode: 5
         m_Arguments:
@@ -529,6 +532,46 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   flagNameRef: puzzle2/blindsOpen
+--- !u!114 &103414015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103414007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb80c0f510077147b240952da692193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &103414016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103414007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0f47e5fd04c894ca39e14fceb6d5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlagFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 103414015}
+        m_TargetAssemblyTypeName: Puzzle2FloorCrack, Assembly-CSharp
+        m_MethodName: ChangeCurrentInterface
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FloorCrack-Lighted
+          m_BoolArgument: 0
+        m_CallState: 2
+  flagNameRef: puzzle2/mirrorWorldMove
 --- !u!224 &164844814 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3681621426563109594, guid: 7fbc4978c2c02db46a09c8401428df8a, type: 3}
@@ -926,6 +969,7 @@ MonoBehaviour:
   - puzzle1/keyAGet
   - puzzle2/blindsOpen
   - puzzle2/blindsClose
+  - puzzle2/mirrorWorldMove
   - puzzle2/keyBGet
   - puzzle3/noteGet
   - puzzle3/option0Click
@@ -977,6 +1021,8 @@ GameObject:
   - component: {fileID: 466534021}
   - component: {fileID: 466534025}
   - component: {fileID: 466534026}
+  - component: {fileID: 466534028}
+  - component: {fileID: 466534027}
   m_Layer: 11
   m_Name: Table
   m_TagString: Untagged
@@ -1131,8 +1177,8 @@ MonoBehaviour:
   FlagFunction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 466534021}
-        m_TargetAssemblyTypeName: PuzzleObject, Assembly-CSharp
+      - m_Target: {fileID: 466534028}
+        m_TargetAssemblyTypeName: Puzzle2FloorCrack, Assembly-CSharp
         m_MethodName: ChangeCurrentInterface
         m_Mode: 5
         m_Arguments:
@@ -1172,6 +1218,46 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   flagNameRef: puzzle2/blindsClose
+--- !u!114 &466534027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466534019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0f47e5fd04c894ca39e14fceb6d5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlagFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 466534028}
+        m_TargetAssemblyTypeName: Puzzle2FloorCrack, Assembly-CSharp
+        m_MethodName: ChangeCurrentInterface
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TableNote-Lighted
+          m_BoolArgument: 0
+        m_CallState: 2
+  flagNameRef: puzzle2/mirrorWorldMove
+--- !u!114 &466534028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466534019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb80c0f510077147b240952da692193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &513120382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,6 +1512,8 @@ GameObject:
   - component: {fileID: 636549662}
   - component: {fileID: 636549661}
   - component: {fileID: 636549664}
+  - component: {fileID: 636549665}
+  - component: {fileID: 636549666}
   m_Layer: 11
   m_Name: Mirror
   m_TagString: Untagged
@@ -1539,8 +1627,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1868163845
-  m_SortingLayer: 2
+  m_SortingLayerID: 977394103
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 49184ae8f8ea97642a6233608d2ad159, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1574,11 +1662,121 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &636549665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636549659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9ef6b0b5e046946b37d99bf2a735ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTriggerFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 636549666}
+        m_TargetAssemblyTypeName: EventFlagCaller, Assembly-CSharp
+        m_MethodName: CallEventFlag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 636549661}
+        m_TargetAssemblyTypeName: PushableObject, Assembly-CSharp
+        m_MethodName: SetStatic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  colliderTag: MirrorTrigger
+--- !u!114 &636549666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636549659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15c8a99cbd80f6438d1d2b64f25bf4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagName: puzzle2/mirrorWorldMove
 --- !u!224 &640393976 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6442291697003957294, guid: 6edcd612da507e34c84d49e8ccbbd896, type: 3}
   m_PrefabInstance: {fileID: 6442291696502124246}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &695242673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 695242674}
+  - component: {fileID: 695242675}
+  m_Layer: 0
+  m_Name: Mirror Trigger
+  m_TagString: MirrorTrigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &695242674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695242673}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: -4.76, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 28185319}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &695242675
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695242673}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.9472347, y: 1.1085027}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.15, y: 3.2}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2210954, y: 1.0107448}
+  m_EdgeRadius: 0
 --- !u!1 &703337773
 GameObject:
   m_ObjectHideFlags: 0
@@ -3339,8 +3537,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1985657663
-  m_SortingLayer: 4
+  m_SortingLayerID: -1868163845
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a909bf97ae8e27c4bba0d1afe5c74add, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

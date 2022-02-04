@@ -26,7 +26,6 @@ public class PushableObject : Interactables
     }
     private void FixedUpdate() {
         if (_myRigidbody.bodyType == RigidbodyType2D.Dynamic && _moving) {
-            Debug.Log(Vector2.Distance(transform.position, _player.transform.position));
             _myRigidbody.velocity = _player.gameObject.GetComponent<Rigidbody2D>().velocity;
         }
     }
