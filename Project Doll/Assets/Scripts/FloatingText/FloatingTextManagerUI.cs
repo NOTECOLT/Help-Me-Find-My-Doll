@@ -11,6 +11,7 @@ public class FloatingTextManagerUI : MonoBehaviour
     bool textIsActive = false;
     GameObject text;
     Queue<string> dialogueQueue;
+    Coroutine coroutine;
 
     // Start is called before the first frame update
     public void Start()
@@ -21,7 +22,7 @@ public class FloatingTextManagerUI : MonoBehaviour
     {
         Debug.Log("Showing UI text");
         ClearText();
-        StartCoroutine(ShowTextCoroutine(textDuration));        
+        coroutine = StartCoroutine(ShowTextCoroutine(textDuration));        
     }
 
     IEnumerator ShowTextCoroutine(float textDuration)
@@ -54,9 +55,10 @@ public class FloatingTextManagerUI : MonoBehaviour
         if (textIsActive)
         {
             Destroy(text);
+            StopCoroutine(coroutine);
         }
 
-        StopAllCoroutines();
+        
     }
 
     public void QueueText(string text)

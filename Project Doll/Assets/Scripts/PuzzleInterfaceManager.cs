@@ -46,7 +46,7 @@ public class PuzzleInterfaceManager : MonoBehaviour {
             if (Input.GetKeyUp(KeyCode.Escape) || Input.GetKeyUp(KeyCode.E)) {
                 _activatedInterface.GetComponent<RectTransform>().localPosition = _inactivePos;
                 _activatedInterface = null;
-                StartCoroutine("DeactivateInterface");
+                StartCoroutine(DeactivateInterface());
             }
         }
     }

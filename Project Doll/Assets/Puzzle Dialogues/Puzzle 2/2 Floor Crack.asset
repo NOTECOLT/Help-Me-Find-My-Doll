@@ -17,8 +17,8 @@ MonoBehaviour:
     it's dangerous to be poking around in there with how dark it is.\r\n"
   - I can now see!
   flagsToCheck:
-  - 
-  - 
+  - puzzle2/hasLight
+  - puzzle2/hasLight
   ifShowOnTrue: 0001
   isAccomplishedFlag: 
   nextDialogueAutomatically: 

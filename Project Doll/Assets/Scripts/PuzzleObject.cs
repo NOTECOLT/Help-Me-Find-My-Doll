@@ -6,7 +6,7 @@ public class PuzzleObject : MonoBehaviour
 {
     [Header("Interface")]
     [SerializeField] private string _interfaceName = "interface";
-    [SerializeField] bool hasDialogue;
+    [SerializeField] bool hasDialogue = true;
     DialogueCaller dialogueCaller;
     
 

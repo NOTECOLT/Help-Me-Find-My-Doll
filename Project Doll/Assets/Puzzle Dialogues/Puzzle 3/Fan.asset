@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03556fbd076042945a20b0a9e3346eba, type: 3}
-  m_Name: Picture Dialogue
+  m_Name: Fan
   m_EditorClassIdentifier: 
   dialogue:
-  - The picture is in pieces. Who could have done this? This was really special to
-    me. I even drew our family at the back.
+  - "It\u2019s unbelievable how it opened by pressing the numbers on the electric
+    fan in order. My doll is playing tricks on me! She\u2019s probably laughing at
+    me right now."
   flagsToCheck:
-  - puzzle4/pictureFlip
-  ifShowOnTrue: 00
+  - puzzle3/fanUnlock
+  ifShowOnTrue: 01
   isAccomplishedFlag: 
   nextDialogueAutomatically: 

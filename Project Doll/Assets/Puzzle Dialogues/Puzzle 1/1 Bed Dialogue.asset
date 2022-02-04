@@ -16,6 +16,13 @@ MonoBehaviour:
   - "A key! But\u2026 I\u2019m afraid. What if there\u2019s monsters under the bed?"
   - "I know! I\u2019ll find something \u201Clong\u201D to reach it."
   - I can use the ruler to reach under the bed!
+  nList:
+  - myList:
+    - puzzle1/rulerGet
+  - myList:
+    - puzzle1/rulerGet
+  - myList:
+    - puzzle1/rulerGet
   flagsToCheck:
   - puzzle1/rulerGet
   - puzzle1/rulerGet
