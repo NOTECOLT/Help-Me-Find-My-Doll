@@ -39,7 +39,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 594.29785, y: -405.55695}
+  m_AnchoredPosition: {x: 457, y: -230}
   m_SizeDelta: {x: 148, y: 274}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &853160505064197877
@@ -144,8 +144,8 @@ MonoBehaviour:
   enableMovement: 1
   xMin: -504.04
   xMax: 750
-  yMin: -405.5569
-  yMax: -405.5569
+  yMin: -230
+  yMax: -230
   onBeginDragFunction:
     m_PersistentCalls:
       m_Calls: []
