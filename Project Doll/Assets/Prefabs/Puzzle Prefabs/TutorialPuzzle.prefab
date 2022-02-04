@@ -22,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &853160505064197879
 RectTransform:
   m_ObjectHideFlags: 0
@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 853160506603632325}
   - component: {fileID: 853160506603632323}
   - component: {fileID: 853160506603632322}
+  - component: {fileID: 8571628407128962737}
   m_Layer: 5
   m_Name: Shelf
   m_TagString: Untagged
@@ -390,6 +391,34 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8571628407128962737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853160506603632324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0f47e5fd04c894ca39e14fceb6d5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlagFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 853160505064197878}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  flagNameRef: tutorial/chairWorldMove
 --- !u!1 &853160506842506484
 GameObject:
   m_ObjectHideFlags: 0
