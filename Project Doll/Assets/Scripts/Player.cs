@@ -5,10 +5,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Config params
+    [Header("Player")]
     [SerializeField] float playerMovespeed = 100f;
     [SerializeField] float interactDistance = 10f;
     [SerializeField] string[] layerMaskInteractables;
     [SerializeField] bool isCarrying; // for debug
+
+    [Header("Dialogue on game start")]
+    [SerializeField] FloatingTextManager floatingTextManager;
+    [SerializeField] bool hasDialogueOnStart;
+    [SerializeField] string[] sentences;
+    [SerializeField] float textDuration;
+
     // Cached references
     BoxCollider2D boxCollider;
 
@@ -30,6 +38,12 @@ public class Player : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         isCarrying = false;
         myRigidbody = GetComponent<Rigidbody2D>();
+
+        if (hasDialogueOnStart)
+        {
+            floatingTextManager.ShowText(sentences, textDuration, gameObject);
+        }
+        
     }
 
     // Update is called once per frame
@@ -114,5 +128,10 @@ public class Player : MonoBehaviour
     public void SetPushableObject(PushableObject objectBeingMoved)
     {
         this.carriedObjectCollider = objectBeingMoved;
+    }
+
+    public GameObject GetGameObject()
+    {
+        return gameObject;
     }
 }

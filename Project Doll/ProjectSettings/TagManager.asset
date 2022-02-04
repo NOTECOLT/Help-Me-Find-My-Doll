@@ -56,4 +56,6 @@ TagManager:
     locked: 0
   - name: FrontObjects
     uniqueID: 1985657663
+  - name: FloatingText
+    uniqueID: 3922265909
     locked: 0
