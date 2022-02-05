@@ -9,11 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: c303bd1a3a889a94b9e5a4a126e1c196
   - enabled: 1
+    path: Assets/Scenes/Night 1 Title.unity
+    guid: b9801cff4fd491d4f82fd35523a5ed05
+  - enabled: 1
     path: Assets/Scenes/Night 1.unity
     guid: 7c9d22e8cfd4914429fc6c03464336c0
   - enabled: 1
+    path: Assets/Scenes/Night 2 Title.unity
+    guid: 8ad56378ced33804e89899779391e1db
+  - enabled: 1
     path: Assets/Scenes/Night 2.unity
     guid: 7aed4b3173c4dd7418157ac43ac0460f
+  - enabled: 1
+    path: Assets/Scenes/Night 3 TItle.unity
+    guid: 1eb79dc0429a7244b87093431eaa201f
   - enabled: 1
     path: Assets/Scenes/Night 3.unity
     guid: e1c85946a4ac49e46b01106ed2f23d32
