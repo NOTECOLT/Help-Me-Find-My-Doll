@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 90543589}
   - component: {fileID: 90543588}
   - component: {fileID: 90543592}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,8 +513,8 @@ Transform:
   m_LocalPosition: {x: 10.36, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 910976642}
-  m_RootOrder: 2
+  m_Father: {fileID: 1669700358}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &90543588
 MonoBehaviour:
@@ -878,7 +878,7 @@ GameObject:
   - component: {fileID: 425641871}
   - component: {fileID: 425641870}
   - component: {fileID: 425641869}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Bedside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -892,12 +892,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425641867}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.53, y: 4.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 910976642}
-  m_RootOrder: 7
+  m_Father: {fileID: 1669700358}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &425641869
 MonoBehaviour:
@@ -1031,10 +1031,7 @@ GameObject:
   - component: {fileID: 442634573}
   - component: {fileID: 442634572}
   - component: {fileID: 442634571}
-  - component: {fileID: 442634570}
   - component: {fileID: 442634569}
-  - component: {fileID: 442634568}
-  - component: {fileID: 442634567}
   m_Layer: 11
   m_Name: Chair
   m_TagString: Untagged
@@ -1054,48 +1051,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910976642}
-  m_RootOrder: 8
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &442634567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442634565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f1de0d7e19f35346b83de6332f94fcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &442634568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442634565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a0f47e5fd04c894ca39e14fceb6d5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FlagFunction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 442634567}
-        m_TargetAssemblyTypeName: ChangeSprite, Assembly-CSharp
-        m_MethodName: ChangeSpriteTo
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: f4d0d4089cf7a924a917728a4a31d990, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  flagNameRef: puzzle1/book3Drag
 --- !u!114 &442634569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1109,46 +1066,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flagName: puzzle1/chairWorldMove
---- !u!114 &442634570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442634565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9ef6b0b5e046946b37d99bf2a735ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onTriggerFunction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 442634572}
-        m_TargetAssemblyTypeName: PushableObject, Assembly-CSharp
-        m_MethodName: SetStatic
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 442634569}
-        m_TargetAssemblyTypeName: EventFlagCaller, Assembly-CSharp
-        m_MethodName: CallEventFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  colliderTag: ChairTrigger
 --- !u!50 &442634571
 Rigidbody2D:
   serializedVersion: 4
@@ -1718,8 +1635,6 @@ GameObject:
   - component: {fileID: 668736479}
   - component: {fileID: 668736478}
   - component: {fileID: 668736477}
-  - component: {fileID: 668736476}
-  - component: {fileID: 668736475}
   m_Layer: 11
   m_Name: Mirror
   m_TagString: Untagged
@@ -1739,61 +1654,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910976642}
-  m_RootOrder: 9
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &668736475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668736473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a15c8a99cbd80f6438d1d2b64f25bf4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagName: puzzle2/mirrorWorldMove
---- !u!114 &668736476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668736473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9ef6b0b5e046946b37d99bf2a735ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onTriggerFunction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 668736475}
-        m_TargetAssemblyTypeName: EventFlagCaller, Assembly-CSharp
-        m_MethodName: CallEventFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 668736478}
-        m_TargetAssemblyTypeName: PushableObject, Assembly-CSharp
-        m_MethodName: SetStatic
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  colliderTag: MirrorTrigger
 --- !u!50 &668736477
 Rigidbody2D:
   serializedVersion: 4
@@ -2228,7 +2090,7 @@ GameObject:
   - component: {fileID: 844605472}
   - component: {fileID: 844605471}
   - component: {fileID: 844605470}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Bookshelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2242,12 +2104,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844605468}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.11, y: 4.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 910976642}
-  m_RootOrder: 1
+  m_Father: {fileID: 1669700358}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &844605470
 MonoBehaviour:
@@ -2546,17 +2408,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1537076634}
-  - {fileID: 844605469}
-  - {fileID: 90543587}
-  - {fileID: 1838584114}
-  - {fileID: 1051750820}
-  - {fileID: 1813302622}
-  - {fileID: 1886528161}
-  - {fileID: 425641868}
   - {fileID: 442634566}
   - {fileID: 668736474}
-  - {fileID: 1414567891}
-  - {fileID: 1760715127}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2655,7 +2508,7 @@ GameObject:
   - component: {fileID: 1051750823}
   - component: {fileID: 1051750822}
   - component: {fileID: 1051750821}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2669,13 +2522,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051750819}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.33, y: 2.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1054231372}
-  m_Father: {fileID: 910976642}
-  m_RootOrder: 4
+  m_Father: {fileID: 1669700358}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1051750821
 MonoBehaviour:
@@ -3021,7 +2874,7 @@ GameObject:
   - component: {fileID: 1414567894}
   - component: {fileID: 1414567893}
   - component: {fileID: 1414567892}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: FloorCrack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3039,8 +2892,8 @@ Transform:
   m_LocalPosition: {x: -0.96, y: -1.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 910976642}
-  m_RootOrder: 10
+  m_Father: {fileID: 1669700358}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1414567892
 MonoBehaviour:
@@ -3671,6 +3524,15 @@ Transform:
   - {fileID: 1483475611}
   - {fileID: 2665063}
   - {fileID: 785204454}
+  - {fileID: 844605469}
+  - {fileID: 90543587}
+  - {fileID: 1838584114}
+  - {fileID: 1051750820}
+  - {fileID: 1813302622}
+  - {fileID: 1886528161}
+  - {fileID: 425641868}
+  - {fileID: 1414567891}
+  - {fileID: 1760715127}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3796,7 +3658,7 @@ GameObject:
   - component: {fileID: 1760715130}
   - component: {fileID: 1760715129}
   - component: {fileID: 1760715128}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ToyBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3810,12 +3672,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760715126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.91, y: -1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 910976642}
-  m_RootOrder: 11
+  m_Father: {fileID: 1669700358}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1760715128
 MonoBehaviour:
@@ -3950,7 +3812,7 @@ GameObject:
   - component: {fileID: 1813302625}
   - component: {fileID: 1813302624}
   - component: {fileID: 1813302623}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Closet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3964,12 +3826,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813302621}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -10.05, y: 3.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 910976642}
-  m_RootOrder: 5
+  m_Father: {fileID: 1669700358}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1813302623
 MonoBehaviour:
@@ -4135,7 +3997,7 @@ GameObject:
   - component: {fileID: 1838584117}
   - component: {fileID: 1838584116}
   - component: {fileID: 1838584115}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4149,12 +4011,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838584113}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.37, y: -4.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 910976642}
-  m_RootOrder: 3
+  m_Father: {fileID: 1669700358}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1838584115
 MonoBehaviour:
@@ -4441,7 +4303,7 @@ GameObject:
   - component: {fileID: 1886528164}
   - component: {fileID: 1886528163}
   - component: {fileID: 1886528162}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Carpet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4455,12 +4317,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886528160}
-  m_LocalRotation: {x: 0, y: 0, z: 0.51601017, w: 0.85658246}
+  m_LocalRotation: {x: -0, y: -0, z: 0.51601017, w: 0.85658246}
   m_LocalPosition: {x: 2.97, y: -0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 910976642}
-  m_RootOrder: 6
+  m_Father: {fileID: 1669700358}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 62.13}
 --- !u!114 &1886528162
 MonoBehaviour:

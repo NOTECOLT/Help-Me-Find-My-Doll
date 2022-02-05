@@ -3483,6 +3483,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 6351174787737999434, guid: d50b9646f6219c749b9ff0db280f01f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6351174787737999436, guid: d50b9646f6219c749b9ff0db280f01f4, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -5946,7 +5950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 626446808094756002, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
       propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.size
