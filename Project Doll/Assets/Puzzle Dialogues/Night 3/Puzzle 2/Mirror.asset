@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - "Hmmm\u2026 Can I use this to reflect the light?\r\n"
   flagsToCheck:
-  - 
+  - puzzle2/chairWorldMove
   ifShowOnTrue: 00
   isAccomplishedFlag: 
   nextDialogueAutomatically: 

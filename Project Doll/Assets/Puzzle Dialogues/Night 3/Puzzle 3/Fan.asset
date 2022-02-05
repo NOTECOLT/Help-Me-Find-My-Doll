@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - "It\u2019s unbelievable how it opened by pressing the numbers on the electric
-    fan in order. My doll is playing tricks on me! She\u2019s probably laughing at
-    me right now."
+    fan in order."
+  - "My doll is playing tricks on me! She\u2019s probably laughing at me right now."
   flagsToCheck:
   - puzzle3/fanUnlock
-  ifShowOnTrue: 01
+  - puzzle3/fanUnlock
+  ifShowOnTrue: 0101
   isAccomplishedFlag: 
   nextDialogueAutomatically: 

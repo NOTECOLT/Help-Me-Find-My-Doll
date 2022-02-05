@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03556fbd076042945a20b0a9e3346eba, type: 3}
   m_Name: Music Box
   m_EditorClassIdentifier: 
-  dialogue: []
-  nList:
-  - myList: []
-  flagsToCheck: []
-  ifShowOnTrue: 
+  dialogue:
+  - "Sounds like there\u2019s a key here but I can\u2019t open it. Is there, like,
+    a password or something? "
+  flagsToCheck:
+  - puzzle3/fanUnlock
+  ifShowOnTrue: 00
   isAccomplishedFlag: 
   nextDialogueAutomatically: 

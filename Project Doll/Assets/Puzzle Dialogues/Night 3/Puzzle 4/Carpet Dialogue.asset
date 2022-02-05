@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Carpet Dialogue
   m_EditorClassIdentifier: 
   dialogue:
-  - "This key was hidden well! Oh, what\u2019s that? It\u2019s Mom and Dad from the
-    picture. Their parts were torn off. I wonder why?"
+  - "There's a key\u2026 just like what the clue said. Could my doll be behind all
+    of this?\r"
   flagsToCheck:
   - puzzle4/pictureFlip
   ifShowOnTrue: 01

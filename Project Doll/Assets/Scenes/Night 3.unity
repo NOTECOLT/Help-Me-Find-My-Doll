@@ -1684,6 +1684,8 @@ GameObject:
   - component: {fileID: 636549664}
   - component: {fileID: 636549665}
   - component: {fileID: 636549666}
+  - component: {fileID: 636549668}
+  - component: {fileID: 636549667}
   m_Layer: 11
   m_Name: Mirror
   m_TagString: Untagged
@@ -1871,6 +1873,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 636549663}
+        m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: eef53a32081572347b160f5825db17d0, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   colliderTag: MirrorTrigger
 --- !u!114 &636549666
 MonoBehaviour:
@@ -1885,6 +1899,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flagName: puzzle2/mirrorWorldMove
+--- !u!114 &636549667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636549659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8db6450d96321849a73e865c5c70dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: 298aa2f7409f3d748b39ba24b947744c, type: 2}
+  floatingTextManagerUI: {fileID: 680207207}
+--- !u!114 &636549668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636549659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f4fc2e88fa2454886ca728bccb04db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: 65000000
+  _functions:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 636549667}
+        m_TargetAssemblyTypeName: DialogueCaller, Assembly-CSharp
+        m_MethodName: ShowDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &640393976 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6442291697003957294, guid: 6edcd612da507e34c84d49e8ccbbd896, type: 3}
@@ -2864,6 +2920,56 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   flagNameRef: puzzle4/pictureFlip
+--- !u!1 &1046267483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2904468783807760523, guid: 82a9446b794587149ab7e3f3bec34566, type: 3}
+  m_PrefabInstance: {fileID: 2904468782821970746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1046267485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046267483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8db6450d96321849a73e865c5c70dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: 88b74790b6c787e4891be24cec67ab04, type: 2}
+  floatingTextManagerUI: {fileID: 680207207}
+--- !u!114 &1046267487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046267483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88049cda5534b6e4d917d91a084e4025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableClicking: 1
+  OnPointerDownFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerUpFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1046267485}
+        m_TargetAssemblyTypeName: DialogueCaller, Assembly-CSharp
+        m_MethodName: ShowDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1153179048
 GameObject:
   m_ObjectHideFlags: 0
@@ -5309,7 +5415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2904468782964934330, guid: 82a9446b794587149ab7e3f3bec34566, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2904468782964934331, guid: 82a9446b794587149ab7e3f3bec34566, type: 3}
       propertyPath: m_Pivot.x
@@ -6173,6 +6279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bookshelf-BookDrag
       objectReference: {fileID: 0}
+    - target: {fileID: 7154433632330729678, guid: a7834ea0d3cc2fd468c87ebc146c0206, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7154433632330729679, guid: a7834ea0d3cc2fd468c87ebc146c0206, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6662,6 +6772,10 @@ PrefabInstance:
     - target: {fileID: 877552253486702517, guid: 2bce75f518cdcd54fa80f638e2581603, type: 3}
       propertyPath: m_Name
       value: Carpet
+      objectReference: {fileID: 0}
+    - target: {fileID: 877552253486702517, guid: 2bce75f518cdcd54fa80f638e2581603, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 877552254569754810, guid: 2bce75f518cdcd54fa80f638e2581603, type: 3}
       propertyPath: OnPointerUpFunction.m_PersistentCalls.m_Calls.Array.size
