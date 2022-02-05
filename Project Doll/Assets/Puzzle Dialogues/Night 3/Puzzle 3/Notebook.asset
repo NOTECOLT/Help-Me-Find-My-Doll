@@ -16,8 +16,8 @@ MonoBehaviour:
   - I cannot read it. I need some light.
   - "What could these numbers be for? I\u2019m so confused! "
   flagsToCheck:
-  - puzzle2/hasLight
-  - puzzle2/hasLight
+  - puzzle2/blindsOpen
+  - puzzle2/blindsOpen
   ifShowOnTrue: 0001
   isAccomplishedFlag: 
   nextDialogueAutomatically: 

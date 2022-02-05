@@ -32,7 +32,7 @@ public class DialogueScriptableObject : ScriptableObject
 
             if(ifShowOnTrue[i] == doCheck)
             {
-                Debug.Log("queue");
+                // Debug.Log("queue");
                 FindObjectOfType<FloatingTextManagerUI>().QueueText(dialogue[i]);
             }
         }
