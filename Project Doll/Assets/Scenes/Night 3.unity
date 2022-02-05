@@ -4433,26 +4433,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4256402729087591756, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4256402729087591756, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
-      propertyPath: m_ScreenMatchMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4256402729087591756, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0.628
-      objectReference: {fileID: 0}
-    - target: {fileID: 4256402729087591756, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 4256402729087591756, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
     - target: {fileID: 4256402729087591793, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
       propertyPath: m_Name
       value: FloatingTextManagerCanvas
