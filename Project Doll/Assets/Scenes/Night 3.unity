@@ -5006,6 +5006,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloatingTextManagerCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4256402729087591793, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc20849d2f643934190a69f0fa0e675f, type: 3}
 --- !u!1 &1927960038
@@ -5980,7 +5984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3756732947313041352, guid: f4dc0495a7c64664b85c48728bc8a4d3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3756732947313041353, guid: f4dc0495a7c64664b85c48728bc8a4d3, type: 3}
       propertyPath: m_Pivot.x
@@ -6081,7 +6085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4837429583337149029, guid: 60a2205fd8af9dc4ea41743c3ff30961, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4837429583337149030, guid: 60a2205fd8af9dc4ea41743c3ff30961, type: 3}
       propertyPath: m_Pivot.x
@@ -6271,7 +6275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 626446808094756002, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
       propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.size

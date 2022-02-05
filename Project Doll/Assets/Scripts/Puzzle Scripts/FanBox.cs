@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class FanBox : MonoBehaviour {
-    private List<int> _refCombo = new List<int>() {4, 2, 3, 1};
+    private List<int> _refCombo = new List<int>() {4, 3, 2, 1};
     public List<int> currentCombo = new List<int>();
     public List<Vector3> rotationList = new List<Vector3>(5);
 
