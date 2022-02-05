@@ -56,8 +56,13 @@ TagManager:
     locked: 0
   - name: FrontObjects
     uniqueID: 1985657663
+    locked: 0
+  - name: Overlay
+    uniqueID: 1488711661
+    locked: 0
   - name: FloatingText
     uniqueID: 3922265909
+    locked: 0
   - name: UI BG
     uniqueID: 59733429
     locked: 0

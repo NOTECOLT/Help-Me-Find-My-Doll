@@ -223,7 +223,6 @@ GameObject:
   - component: {fileID: 3526885013300656429}
   - component: {fileID: 1570790098}
   - component: {fileID: 1570790106}
-  - component: {fileID: 1123206683504396710}
   m_Layer: 5
   m_Name: Chair
   m_TagString: Untagged
@@ -387,6 +386,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 7154433632335472804}
+        m_TargetAssemblyTypeName: DraggableItem, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   flagNameRef: puzzle1/book3Drag
 --- !u!114 &2197427228727560002
 MonoBehaviour:
@@ -483,25 +494,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnPointerUpFunction:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1123206683504396710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7154433632335472804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88049cda5534b6e4d917d91a084e4025, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableClicking: 1
-  OnPointerDownFunction:
-    m_PersistentCalls:
-      m_Calls: []
   OnPointerUpFunction:
     m_PersistentCalls:
       m_Calls: []

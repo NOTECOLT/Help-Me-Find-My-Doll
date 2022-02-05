@@ -12,7 +12,7 @@ public class Puzzle1BookSlot : DroppableSlot {
         }
     }
     public override void OnDrop(PointerEventData eventData) {
-        if (eventData.pointerDrag != null) {
+        if (eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<DraggableItem>().enableMovement) {
             eventData.pointerDrag.GetComponent<RectTransform>().localRotation = Quaternion.Euler(0, 0, -90);
             eventData.pointerDrag.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             _bookCount += 1;
