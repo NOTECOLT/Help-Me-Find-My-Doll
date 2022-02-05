@@ -405,7 +405,7 @@ MonoBehaviour:
   lockYAxis: 1
   enableMovement: 0
   xMin: -504.04
-  xMax: 750
+  xMax: 453
   yMin: -230
   yMax: -230
   onBeginDragFunction:
