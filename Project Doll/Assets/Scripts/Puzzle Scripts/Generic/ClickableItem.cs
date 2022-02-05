@@ -16,8 +16,11 @@ public class ClickableItem : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             OnPointerDownFunction.Invoke(eventData);
     }
     public virtual void OnPointerUp(PointerEventData eventData) {
-        if (enableClicking)
+        if (enableClicking) {
+            print(enableClicking);
             OnPointerUpFunction.Invoke(eventData);
+        }
+            
     }
 
     public void SetClicking(bool value) {
