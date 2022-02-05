@@ -3717,7 +3717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65456dd054f6f224db71fbeb3339e19c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hacksOn: 0
+  hacksOn: 1
 --- !u!1 &1453015981 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3761219530931517944, guid: cc9561697bdfde44c820f0bd411f4c7f, type: 3}
@@ -5697,27 +5697,59 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
+      propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
       propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 742617762}
+      objectReference: {fileID: 1339826515}
+    - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
+      propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1339826515}
     - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
       propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
+      propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
       propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ShowDialogue
+      value: LoadNextScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
+      propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: LoadNextScene
       objectReference: {fileID: 0}
     - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
       propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: DialogueCaller, Assembly-CSharp
+      value: SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
+      propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
+      propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
       propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
+      propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
       propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 626446809684131634, guid: ffd49004472a8094b85d517c504cc32e, type: 3}
+      propertyPath: winningFunction.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
