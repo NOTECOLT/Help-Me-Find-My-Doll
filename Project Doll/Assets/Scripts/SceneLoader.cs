@@ -11,7 +11,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadGameOverScene()
     {
         // Loads game over scene using build index
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4);
     }
 
     public void LoadNextScene()
