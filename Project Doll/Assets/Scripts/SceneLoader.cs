@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public Animator transition;
+    [SerializeField] float transitionTime = 1f;
 
     public void LoadGameOverScene()
     {
@@ -15,7 +17,8 @@ public class SceneLoader : MonoBehaviour
     public void LoadNextScene()
     {
         // Loads next sceme
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadLevelCoroutine(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
     public void LoadMainMenu()
@@ -30,4 +33,15 @@ public class SceneLoader : MonoBehaviour
         Application.Quit();
     }
 
+    IEnumerator LoadLevelCoroutine(int levelIndex)
+    {
+        //Play animation
+        transition.SetTrigger("Start");
+
+        // Wait for animation
+        yield return new WaitForSeconds(transitionTime);
+
+        // Load
+        SceneManager.LoadScene(levelIndex);
+    }
 }
