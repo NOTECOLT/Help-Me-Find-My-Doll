@@ -6,9 +6,6 @@ using TMPro;
 public class FloatingTextManager : MonoBehaviour
 {
     [SerializeField] GameObject floatingTextPrefab;
-    [SerializeField] GameObject target;
-    [SerializeField] float textDuration = 3f;
-    [SerializeField] string[] sentencesToSay;
     // Start is called before the first frame update
 
     public void ShowText(string[] sentences, float textDuration, GameObject target)
