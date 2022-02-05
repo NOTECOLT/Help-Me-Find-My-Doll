@@ -999,6 +999,8 @@ MonoBehaviour:
   - puzzle4/keyDGet
   - toybox/keyIn
   - puzzle2/hasLight
+  - puzzle1/textBook1
+  - puzzle2/hasLight
 --- !u!4 &391586184
 Transform:
   m_ObjectHideFlags: 0
@@ -3431,7 +3433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6351174787737999434, guid: d50b9646f6219c749b9ff0db280f01f4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6351174787737999436, guid: d50b9646f6219c749b9ff0db280f01f4, type: 3}
       propertyPath: m_RootOrder

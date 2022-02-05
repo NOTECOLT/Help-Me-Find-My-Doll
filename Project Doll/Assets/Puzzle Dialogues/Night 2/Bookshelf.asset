@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: Bookshelf
   m_EditorClassIdentifier: 
   dialogue:
-  - My doll is way up there, I can't reach it!
+  - "I see you but I can\u2019t get up there unless I suddenly grow taller."
+  - "I\u2019ll find a way though. Don\u2019t test me!\r"
   - I'll be able to reach my doll with this chair! I just need to adjust it a bit.
   flagsToCheck:
   - tutorial/chairWorldMove
   - tutorial/chairWorldMove
-  ifShowOnTrue: 0001
+  - tutorial/chairWorldMove
+  ifShowOnTrue: 000001
   isAccomplishedFlag: 
   nextDialogueAutomatically: 

@@ -10,12 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03556fbd076042945a20b0a9e3346eba, type: 3}
-  m_Name: 1 Bookshelf Dialogue Part 1
+  m_Name: Tutorial1
   m_EditorClassIdentifier: 
   dialogue:
-  - "Looks like there\u2019s a stick up there. Time to do that trick from before.\r\n"
+  - "Looks like it\u2019s time to sleep."
+  - "I have to find my precious doll or else I\u2019ll have scary dreams!"
+  - Hmmm, did I leave it on the bed?
+  - (Use WASD keys to move around)
   flagsToCheck:
-  - puzzle1/textBook1
-  ifShowOnTrue: 00
-  isAccomplishedFlag: puzzle1/textBook1
+  - tutorial/text1
+  - tutorial/text1
+  - tutorial/text1
+  - tutorial/text1
+  - tutorial/text2
+  ifShowOnTrue: 00000000
+  isAccomplishedFlag: tutorial/text1
   nextDialogueAutomatically: 

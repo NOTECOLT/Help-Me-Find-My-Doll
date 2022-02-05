@@ -36,5 +36,7 @@ public class DialogueScriptableObject : ScriptableObject
                 FindObjectOfType<FloatingTextManagerUI>().QueueText(dialogue[i]);
             }
         }
+
+        EventFlagManager.Instance.FlagTickTrue(isAccomplishedFlag);
     }
 }

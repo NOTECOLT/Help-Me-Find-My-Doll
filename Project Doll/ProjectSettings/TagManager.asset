@@ -8,6 +8,8 @@ TagManager:
   - PuzzleDragTrigger
   - ChairTrigger
   - MirrorTrigger
+  - Night1Tutorial
+  - Night1Tutorial2
   layers:
   - Default
   - TransparentFX

@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Oh, there you are! Now I can go to bed.
+  - (Remember to go to sleep immediately after finding your doll,
+  - or it will be GAME OVER for there might be monsters lurking around you...)
+  - (Press E on the bed again to go to sleep.)
   flagsToCheck:
   - tutorial/dollGet
-  ifShowOnTrue: 00
+  - tutorial/dollGet
+  - tutorial/dollGet
+  - tutorial/dollGet
+  ifShowOnTrue: 00000000
   isAccomplishedFlag: 
   nextDialogueAutomatically: 
