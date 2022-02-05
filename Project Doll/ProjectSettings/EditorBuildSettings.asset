@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
-    guid: abb4a56c6db59db40aeac6f6ff3e6cc2
+    guid: c303bd1a3a889a94b9e5a4a126e1c196
   - enabled: 1
     path: Assets/Scenes/Night 1.unity
     guid: 7c9d22e8cfd4914429fc6c03464336c0
@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Night 3.unity
     guid: e1c85946a4ac49e46b01106ed2f23d32
+  - enabled: 1
+    path: Assets/Scenes/Win Screen.unity
+    guid: 4b1f39e3910420948b2a9d9d7919cc46
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: cc3a515fa2c5b014093a3b59d2e05a1c
